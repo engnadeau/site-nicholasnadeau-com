@@ -4,33 +4,75 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
-  ignoreTitleTemplate: true,
+  title: 'Nicholas Nadeau',
 };
 ---
 
 <Layout metadata={metadata}>
   <Hero
-    image={{
-      src: '~/assets/images/hero-nicholas.jpg',
-      alt: 'Dr. Nicholas Nadeau and collaborators from Osedea deploying the Boston Dynamics Spot robot for AI-driven agricultural monitoring at Interius Farms, examining vertical crop growth in a controlled environment.',
-    }}
-  />
+    id="hero"
+    title="Dr. Nicholas Nadeau"
+    tagline="CTO, Serial Founder, and Technology Innovator"
+    actions={[{ variant: 'primary', text: 'Connect with me', href: 'https://www.linkedin.com/in/engnadeau/' }]}
+  >
+    <Fragment slot="subtitle">
+      I’m a CTO and serial founder focused on advancing AI and emerging technologies. <br /> With a Ph.D. in AI and engineering,
+      I drive innovation and transform concepts into impactful, real-world solutions.
+    </Fragment>
+  </Hero>
 
-  <BlogLatestPosts title="Find out more content in my blog" />
-
-  <CallToAction
-    actions={[
+  <Content
+    id="about"
+    columns={3}
+    items={[
       {
-        variant: 'primary',
-        text: 'Connect on LinkedIn',
-        href: 'https://www.linkedin.com/in/engnadeau/',
-        target: '_blank',
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          target: '_blank',
+          text: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/engnadeau/',
+        },
+      },
+      {
+        icon: 'tabler:brand-github',
+        callToAction: {
+          target: '_blank',
+          text: 'GitHub',
+          href: 'https://github.com/engnadeau',
+        },
       },
     ]}
+    image={{
+      src: '~/assets/images/nicholas.jpg',
+      alt: 'Nicholas Nadeau',
+      loading: 'eager',
+    }}
   >
-    <Fragment slot="title"> Let’s Connect 👇 </Fragment>
-  </CallToAction>
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+      <p>
+        Dr. Nicholas Nadeau is the CTO at SmartOne.ai, a leader in AI and data solutions. With a Ph.D. in AI and
+        engineering, he has built a career on tech innovation.
+      </p>
+      <br />
+      <p>
+        An active mentor in the tech community, Nicholas supports startups through platforms like Creative Destruction
+        Lab, Techstars, and NextAI. His impactful work includes leading humanoid robot deployments as CTO at 1X.
+      </p>
+      <br />
+      <p>
+        At SmartOne.ai, Nicholas drives product development and innovation, advancing human-AI collaboration to push the
+        boundaries of AI applications.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <BlogLatestPosts title="Find out more content in my blog" />
 </Layout>
