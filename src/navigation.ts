@@ -4,6 +4,7 @@ export const headerData = {
   links: [
     { text: 'Home', href: '/' },
     { text: 'About', href: '#about' },
+    { text: 'Portfolio', href: '#portfolio' },
     { text: 'Blog', href: '#blog' },
   ],
 };
@@ -13,6 +14,7 @@ export const footerData = {
   secondaryLinks: [
     { text: 'Home', href: '/' },
     { text: 'About', href: '#about' },
+    { text: 'Portfolio', href: '#portfolio' },
     { text: 'Blog', href: '#blog' },
   ],
   socialLinks: [
