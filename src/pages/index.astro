@@ -4,6 +4,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
+import Brands from '~/components/widgets/Brands.astro';
 
 const metadata = {
   title: 'Nicholas Nadeau | AI & Tech Innovator',
@@ -15,7 +16,7 @@ const metadata = {
   <Hero
     id="hero"
     title="Nicholas Nadeau"
-    tagline="Tech Leader, Entrepreneur, AI Innovator"
+    tagline="AI & Emerging Tech Expert | Investor | Mentor"
     actions={[
       { variant: 'primary', text: 'Connect with Me', href: 'https://www.linkedin.com/in/engnadeau/', target: '_blank' },
       { variant: 'secondary', text: 'Explore My Work', href: '#about' },
@@ -23,8 +24,8 @@ const metadata = {
     image={{ src: '~/assets/images/hero-nicholas.jpg', alt: 'Nicholas Hero Image' }}
   >
     <Fragment slot="subtitle">
-      I specialize in AI, data, and emerging tech innovation. <br />
-      My focus is on turning high-impact concepts into real-world solutions.
+      Building the future of AI and tech. <br />
+      Empowering startups, advancing innovation, and investing in transformative ideas.
     </Fragment>
   </Hero>
 
@@ -59,17 +60,66 @@ const metadata = {
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Me</h2>
       <p>
-        I'm an advisor and serial CTO with a Ph.D. in AI and engineering. My work drives practical applications of AI
-        and data.
+        I’m an AI and tech innovator with a Ph.D. in AI and engineering, focused on creating practical, high-impact
+        solutions that redefine what’s possible in AI, data, and emerging tech. As an advisor and former CTO, I’ve led
+        major advancements across AI-driven applications, pushing the boundaries of human-AI collaboration and ethical
+        data use.
       </p>
       <br />
       <p>
-        I mentor startups at <a href="https://creativedestructionlab.com/" target="_blank">Creative Destruction Lab</a> and
-        <a href="https://www.nextcanada.com/next-ai/" target="_blank">Next AI</a> focusing on scalable tech with real results.
+        My work with startups through platforms like Creative Destruction Lab and Next AI centers on building scalable,
+        transformative technology. I help founders cut through complexity, align with market needs, and deliver results
+        that matter. My hands-on experience includes launching initiatives that have secured significant investments and
+        redefined tech solutions in AI and robotics.
       </p>
-      <br />
     </Fragment>
   </Content>
+
+  <!-- Portfolio -->
+  <Brands
+    title="Portfolio & Advisory Roles"
+    subtitle="Empowering innovation with strategic guidance and investment."
+    icons={[]}
+    images={[
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png',
+        alt: 'Paypal',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png',
+        alt: 'Visa',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_1280.png',
+        alt: 'Ebay',
+      },
+
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/04/13/17/45/icon-720944_1280.png',
+        alt: 'Youtube',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
+        alt: 'Microsoft',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
+        alt: 'Node JS',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
+        alt: 'Google',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
+        alt: 'Meta',
+      },
+      {
+        src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
+        alt: 'Yahoo',
+      },
+    ]}
+  />
 
   <!-- Blog -->
   <BlogLatestPosts id="blog" title="Latest Posts" />
