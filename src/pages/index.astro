@@ -12,11 +12,15 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <!-- Hero -->
   <Hero
     id="hero"
     title="Nicholas Nadeau"
     tagline="CTO, Serial Founder, Technology Innovator"
-    actions={[{ variant: 'primary', text: 'Connect with me', href: 'https://www.linkedin.com/in/engnadeau/' }]}
+    actions={[
+      { variant: 'primary', text: 'Connect with me', href: 'https://www.linkedin.com/in/engnadeau/', target: '_blank' },
+    ]}
+    image={{ src: '~/assets/images/hero-nicholas.jpg', alt: 'Nicholas Hero Image' }}
   >
     <Fragment slot="subtitle">
       I’m a CTO and serial founder focused on advancing AI and emerging technologies. <br /> With a Ph.D. in AI and engineering,
@@ -24,6 +28,7 @@ const metadata = {
     </Fragment>
   </Hero>
 
+  <!-- About Me -->
   <Content
     id="about"
     columns={2}
@@ -70,5 +75,20 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <BlogLatestPosts title="Find out more content in my blog" />
+  <!-- Blog -->
+  <BlogLatestPosts id="blog" title="Latest Posts" />
+
+  <!-- CTA -->
+  <CallToAction
+    title="Want to connect?"
+    subtitle="Connect with me on LinkedIn."
+    actions={[
+      {
+        variant: 'primary',
+        text: "Let's Chat",
+        href: 'https://www.linkedin.com/in/engnadeau/',
+        target: '_blank',
+      },
+    ]}
+  />
 </Layout>
