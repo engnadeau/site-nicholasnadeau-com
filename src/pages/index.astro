@@ -1,13 +1,12 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
-  title: 'Nicholas Nadeau',
+  title: 'Nicholas Nadeau | AI & Tech Innovator',
 };
 ---
 
@@ -16,15 +15,16 @@ const metadata = {
   <Hero
     id="hero"
     title="Nicholas Nadeau"
-    tagline="CTO, Serial Founder, Technology Innovator"
+    tagline="Tech Leader, Entrepreneur, AI Innovator"
     actions={[
-      { variant: 'primary', text: 'Connect with me', href: 'https://www.linkedin.com/in/engnadeau/', target: '_blank' },
+      { variant: 'primary', text: 'Connect with Me', href: 'https://www.linkedin.com/in/engnadeau/', target: '_blank' },
+      { variant: 'secondary', text: 'Explore My Work', href: '#about' },
     ]}
     image={{ src: '~/assets/images/hero-nicholas.jpg', alt: 'Nicholas Hero Image' }}
   >
     <Fragment slot="subtitle">
-      I’m a CTO and serial founder focused on advancing AI and emerging technologies. <br /> With a Ph.D. in AI and engineering,
-      I drive innovation and transform concepts into impactful, real-world solutions.
+      I specialize in AI, data, and emerging tech innovation. <br />
+      My focus is on turning high-impact concepts into real-world solutions.
     </Fragment>
   </Hero>
 
@@ -59,19 +59,15 @@ const metadata = {
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Me</h2>
       <p>
-        I’m the CTO at SmartOne.ai, a leader in AI and data solutions. With a Ph.D. in AI and engineering, I’ve built my
-        career on tech innovation.
+        I'm an advisor and serial CTO with a Ph.D. in AI and engineering. My work drives practical applications of AI
+        and data.
       </p>
       <br />
       <p>
-        As an active mentor in the tech community, I support startups through platforms like Creative Destruction Lab,
-        Techstars, and NextAI. My work includes leading humanoid robot deployments as CTO at 1X.
+        I mentor startups at <a href="https://creativedestructionlab.com/" target="_blank">Creative Destruction Lab</a> and
+        <a href="https://www.nextcanada.com/next-ai/" target="_blank">Next AI</a> focusing on scalable tech with real results.
       </p>
       <br />
-      <p>
-        At SmartOne.ai, I drive product development and innovation, advancing human-AI collaboration to push the
-        boundaries of AI applications.
-      </p>
     </Fragment>
   </Content>
 
@@ -80,12 +76,12 @@ const metadata = {
 
   <!-- CTA -->
   <CallToAction
-    title="Want to connect?"
-    subtitle="Connect with me on LinkedIn."
+    title="Let’s Connect"
+    subtitle="Reach out on LinkedIn"
     actions={[
       {
         variant: 'primary',
-        text: "Let's Chat",
+        text: 'Connect on LinkedIn',
         href: 'https://www.linkedin.com/in/engnadeau/',
         target: '_blank',
       },
