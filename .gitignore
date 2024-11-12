@@ -22,3 +22,6 @@ pnpm-debug.log*
 pnpm-lock.yaml
 
 .astro
+
+# Ignore the Windows directory files that can be created by Windows Explorer
+*:Zone.Identifier
