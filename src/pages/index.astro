@@ -2,7 +2,6 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import Brands from '~/components/widgets/Brands.astro';
 
@@ -21,7 +20,6 @@ const metadata = {
       { variant: 'primary', text: 'Connect with Me', href: 'https://www.linkedin.com/in/engnadeau/', target: '_blank' },
       { variant: 'secondary', text: 'Explore My Work', href: '#about' },
     ]}
-    image={{ src: '~/assets/images/hero-nicholas.jpg', alt: 'Nicholas Hero Image' }}
   >
     <Fragment slot="subtitle">
       Building the future of AI and tech. <br />
@@ -78,6 +76,7 @@ const metadata = {
   <!-- Portfolio -->
   <Brands
     title="Portfolio & Advisory Roles"
+    id="portfolio"
     subtitle="Empowering innovation with strategic guidance and investment."
     icons={[]}
     images={[
@@ -102,18 +101,4 @@ const metadata = {
 
   <!-- Blog -->
   <BlogLatestPosts id="blog" title="Latest Posts" />
-
-  <!-- CTA -->
-  <CallToAction
-    title="Let’s Connect"
-    subtitle="Reach out on LinkedIn"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Connect on LinkedIn',
-        href: 'https://www.linkedin.com/in/engnadeau/',
-        target: '_blank',
-      },
-    ]}
-  />
 </Layout>
