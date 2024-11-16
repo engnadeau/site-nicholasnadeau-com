@@ -1,0 +1,14 @@
+---
+publishDate: 2024-11-14
+author: Nicholas Nadeau
+title: "Luigi Goes Brrr: Simplifying Task Orchestration Without the Headaches"
+image: ~/assets/images/post/2024-11-12_montreal-python-luigi.jpg
+category: Events
+tags:
+  - python
+  - software
+---
+
+[Presented at Montréal-Python MP-108](https://www.meetup.com/montreal-python/events/303432317/?utm_medium=referral&utm_campaign=share-btn_savedevents_share_modal&utm_source=link) at the NAD School of Digital Arts, Animation and Design.
+
+This presentation explores Luigi as a lightweight solution for managing complex workflows without the overhead of tools like Airflow. Designed for batch processing, ETL, and ML pipelines, Luigi offers scalable task orchestration with dependency management, parallel execution, and built-in error handling. Key topics include DAG-based sequencing, resilient processing, and use cases that highlight Luigi’s fit for small to medium-sized data workflows. This talk demonstrates how Luigi enables efficient task orchestration, allowing Python developers to manage dependencies and streamline operations in a straightforward, maintainable way.
