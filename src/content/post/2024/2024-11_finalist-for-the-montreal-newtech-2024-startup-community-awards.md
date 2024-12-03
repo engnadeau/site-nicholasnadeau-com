@@ -1,7 +1,7 @@
 ---
 publishDate: 2024-11-01
 author: Nicholas Nadeau
-title: "Finalist for the Montréal NewTech 2024 Startup Community Awards!"
+title: 'Finalist for the Montréal NewTech 2024 Startup Community Awards!'
 image: ~/assets/images/post/2024/2024-11-06_montreal-newtech-awards.jpg
 category: Events
 tags:
