@@ -2,7 +2,7 @@
 publishDate: 2024-11-06
 author: Nicholas Nadeau
 title: "AI in Action: Insights from the Workforce"
-image: ~/assets/images/post/2024-11-06_ai-in-action-concordia.jpg
+image: ~/assets/images/post/2024/2024-11-06_ai-in-action-concordia.jpg
 category: Events
 tags:
   - AI
