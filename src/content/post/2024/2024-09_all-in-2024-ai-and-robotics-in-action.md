@@ -2,7 +2,7 @@
 publishDate: 2024-09-12
 author: Nicholas Nadeau
 title: "ALL IN 2024: AI and Robotics in Action"
-image: ~/assets/images/post/2024-09-12_all-in-2024.jpg
+image: ~/assets/images/post/2024/2024-09-12_all-in-2024.jpg
 category: Events
 tags:
   - AI

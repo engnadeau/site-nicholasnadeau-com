@@ -2,7 +2,7 @@
 publishDate: 2024-09-24
 author: Nicholas Nadeau
 title: "Connecting with AI Talent at the Mila Career Fair"
-image: ~/assets/images/post/2024-09-24_mila-career-fair.jpg
+image: ~/assets/images/post/2024/2024-09-24_mila-career-fair.jpg
 category: Events
 tags:
   - AI

@@ -2,7 +2,7 @@
 publishDate: 2024-11-12
 author: Nicholas Nadeau
 title: "Ensuring Observability and Explainability in Multimodal Data Pipelines for AI Development"
-image: ~/assets/images/post/2024-11-12_oxai-cascon.jpg
+image: ~/assets/images/post/2024/2024-11-12_oxai-cascon.jpg
 category: Events
 tags:
   - AI
