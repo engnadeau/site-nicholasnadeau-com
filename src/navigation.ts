@@ -5,7 +5,7 @@ export const headerData = {
     { text: 'Home', href: '/' },
     { text: 'About', href: '#about' },
     { text: 'Portfolio', href: '#portfolio' },
-    { text: 'Blog', href: '#blog' },
+    { text: 'Posts', href: '#posts' },
   ],
 };
 
@@ -15,7 +15,7 @@ export const footerData = {
     { text: 'Home', href: '/' },
     { text: 'About', href: '#about' },
     { text: 'Portfolio', href: '#portfolio' },
-    { text: 'Blog', href: '#blog' },
+    { text: 'Posts', href: '#posts' },
   ],
   socialLinks: [
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
