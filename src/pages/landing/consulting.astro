@@ -1,0 +1,39 @@
+---
+import Layout from '~/layouts/LandingLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Expert Consulting & Technical Due Diligence | Nicholas Nadeau, Ph.D., P.Eng.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero
+    tagline="Expert Consulting & Technical Due Diligence"
+    title="Trusted Insights for High-Stakes Decisions"
+    subtitle="I help venture capitalists, startups, and investment bankers uncover the technical realities that drive smarter investments and stronger outcomes."
+    actions={[{ variant: 'primary', text: 'Contact Me', href: 'https://www.linkedin.com/in/engnadeau/' }]}
+    image={{
+      src: '~/assets/images/landing/nicholas.jpg',
+      alt: 'Consulting and due diligence for high-stakes decisions',
+    }}
+  />
+
+  <!-- Call to Action Widget ******************* -->
+
+  <CallToAction
+    title="Technical Expertise Tailored to Your Needs"
+    subtitle="Whether you're conducting due diligence for an investment, evaluating technical risk, or seeking expert guidance to navigate emerging technologies, I bring over a decade of experience in AI, data, robotics, and engineering to your table."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Schedule a Consultation',
+        href: 'https://www.linkedin.com/in/engnadeau/',
+      },
+    ]}
+  />
+</Layout>
