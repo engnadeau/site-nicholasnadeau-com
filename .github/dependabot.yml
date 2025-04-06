@@ -14,3 +14,13 @@ updates:
         update-types:
           - "minor"
           - "patch"
+
+  - package-ecosystem: "github-actions" # GitHub Actions
+    directory: "/"                      # Location of workflow files (.github/workflows)
+    schedule:
+      interval: "weekly"                # Check for updates weekly
+    groups:
+      minor-and-patch-updates:
+        update-types:
+          - "minor"
+          - "patch"
