@@ -10,12 +10,11 @@ Static assets can be added in `public/` (for non-transforming assets) or `assets
 
 Run these from the project root in the terminal:
 
-| Command             | Description                                |
-| ------------------- | ------------------------------------------ |
-| `npm install`       | Install dependencies                       |
-| `npm run dev`       | Start local dev server at `localhost:3000` |
-| `npm run build`     | Build for production to `./dist/`          |
-| `npm run preview`   | Preview production build locally           |
-| `npm run check`     | Check for project errors                   |
-| `npm run fix`       | Lint and format code with Prettier         |
-| `npm run astro ...` | Run Astro CLI commands (e.g., `astro add`) |
+| Command               | Description                                |
+| --------------------- | ------------------------------------------ |
+| `pnpm install`        | Install dependencies                       |
+| `pnpm run dev`        | Start local dev server at `localhost:3000` |
+| `pnpm run build`      | Build for production to `./dist/`          |
+| `pnpm run preview`    | Preview production build locally           |
+| `pnpm run check`      | Check for project errors                   |
+| `pnpm run fix`        | Lint and format code with Prettier         |
