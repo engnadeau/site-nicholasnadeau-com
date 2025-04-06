@@ -1,8 +1,14 @@
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "pnpm build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--version" # Prevents Netlify from running npm install
+
 [build.processing.html]
   pretty_urls = false
+
 [[headers]]
   for = "/_astro/*"
   [headers.values]
