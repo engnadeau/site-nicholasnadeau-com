@@ -18,6 +18,7 @@ The inaugural AI Salon Montreal was a resounding success, showcasing the passion
 Bringing together founders, investors, builders, and thought leaders proved again that this city is an AI innovation powerhouse. Our mission is clear: connect local startups with VC funding and bridge the gap for early-stage companies.
 
 The energy was high, featuring a keynote from Jean-Simon Venne and impressive pitches from:
+
 - Patrick Murphy (Maket)
 - Gabriel Lespérance (Trampoline AI)
 - Katya Shabanova (crbnx inc.)
@@ -25,6 +26,7 @@ The energy was high, featuring a keynote from Jean-Simon Venne and impressive pi
 We're already seeing momentum, with Maket recently securing investment from Reid Hoffman and Blitzscaling Ventures!
 
 Huge thanks to our sponsors, partners, and the incredible team:
+
 - Champion Sponsor: Fasken (Adam Saskin)
 - Core Sponsors: GuruLink, Amazon, Montréal International
 - Community & Logistics Partners: Fulko Films, NEXT AI, CDL-Montreal, ELANTech, IVADO, CEIM, Inovia Capital, Front Row Ventures, Jeffrey D. Abbott & the global AI Salon team, Innovobot (Michel Dubois), Constance Jaluzot & volunteers.
