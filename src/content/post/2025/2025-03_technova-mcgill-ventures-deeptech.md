@@ -6,10 +6,11 @@ description: 'Participated in McGill Ventures TechNova, discussing DeepTech comp
 image: ~/assets/images/post/2025/2025-03_technova-mcgill-ventures.jpg
 category: Events
 tags:
-  - mcgill ventures
-  - technova
+  - ai
+  - startup
   - deeptech
-  - networking
+  - technova
+  - mcgill ventures
 ---
 
 Attended McGill Ventures' TechNova event, engaging in valuable conversations about building and backing DeepTech companies.

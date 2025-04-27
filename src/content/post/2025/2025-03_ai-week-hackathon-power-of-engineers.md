@@ -1,15 +1,15 @@
 ---
 publishDate: 2025-03-23
 author: Nicholas Nadeau
-title: "The Power of Engineers: Kicking Off AI Week with a Hackathon"
-description: "Highlighting the importance and impact of community-driven hackathons, like the one kicking off AI Week in Montreal, organized by Antonio Spiezia and Simon Wang."
+title: 'The Power of Engineers: Kicking Off AI Week with a Hackathon'
+description: 'Highlighting the importance and impact of community-driven hackathons, like the one kicking off AI Week in Montreal, organized by Antonio Spiezia and Simon Wang.'
 image: ~/assets/images/post/2025/2025-03_ai-week-hackathon.jpg
 category: Community
 tags:
+  - ai
+  - montreal
   - hackathon
-  - ai week
-  - montreal ai
-  - community building
+  - community
   - engineering
 ---
 

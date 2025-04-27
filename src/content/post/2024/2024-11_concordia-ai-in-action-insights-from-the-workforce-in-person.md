@@ -5,7 +5,11 @@ title: 'AI in Action: Insights from the Workforce'
 image: ~/assets/images/post/2024/2024-11-06_ai-in-action-concordia.jpg
 category: Events
 tags:
-  - AI
+  - ai
+  - career development
+  - concordia
+  - futurebound
+  - panel
 ---
 
 [Presented at Concordia University](https://www.concordia.ca/cuevents/offices/provost/ssc/2024/11/06/ai-in-action-insights-from-the-workforce.html) as part of the FutureBound program.

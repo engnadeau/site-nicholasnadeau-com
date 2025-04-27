@@ -6,8 +6,11 @@ description: 'Successful second AI Salon Montreal focused on representation, spo
 image: ~/assets/images/post/2025/2025-03_ai-salon-montreal.jpg
 category: Events
 tags:
-  - startup
   - ai
+  - montreal
+  - startup
+  - ai salon
+  - women in ai
 ---
 
 AI Salon Montreal's second event successfully brought together founders, investors, and builders, deepening our community's focus on impactful AI through representation.

@@ -6,11 +6,11 @@ description: 'Recap of the successful inaugural AI Salon Montreal event, highlig
 image: ~/assets/images/post/2025/2025-02_inaugural-ai-salon-montreal-recap.jpg
 category: Events
 tags:
-  - ai salon
-  - montreal ai
+  - ai
+  - montreal
   - startup
+  - ai salon
   - event recap
-  - inaugural event
 ---
 
 The inaugural AI Salon Montreal was a resounding success, showcasing the passion, talent, and drive of Montreal's extraordinary AI community.
