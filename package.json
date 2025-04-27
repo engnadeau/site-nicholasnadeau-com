@@ -17,9 +17,8 @@
     "check:astro": "astro check",
     "check:eslint": "eslint .",
     "check:prettier": "prettier --check .",
-    "fix": "npm run fix:eslint && npm run fix:prettier",
     "fix:eslint": "eslint --fix .",
-    "fix:prettier": "prettier -w ."
+    "format": "prettier -w ."
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
