@@ -69,7 +69,9 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegra
         }
       },
       'astro:config:done': async ({ config }) => {
-        cfg = config;
+        // Cast config to any to bypass type mismatch between Astro versions
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        cfg = config as any;
       },
 
       'astro:build:done': async ({ logger }) => {
