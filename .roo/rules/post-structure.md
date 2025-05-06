@@ -1,8 +1,3 @@
----
-description:
-globs:
-alwaysApply: true
----
 Blog posts in `src/content/post/YYYY/` should follow this structure:
 
 1.  **Frontmatter:** Ensure the following YAML frontmatter fields are present:

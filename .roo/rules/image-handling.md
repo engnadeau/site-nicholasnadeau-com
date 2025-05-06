@@ -1,8 +1,3 @@
----
-description: 
-globs: 
-alwaysApply: true
----
 Blog post images must follow these conventions:
 
 1.  **Location:** Images should be placed in the corresponding year's directory within `src/assets/images/post/`, e.g., `src/assets/images/post/YYYY/`.
