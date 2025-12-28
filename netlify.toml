@@ -7,3 +7,16 @@
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirect engnadeau.com to nicholasnadeau.com
+[[redirects]]
+  from = "https://engnadeau.com/*"
+  to = "https://nicholasnadeau.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.engnadeau.com/*"
+  to = "https://nicholasnadeau.com/:splat"
+  status = 301
+  force = true
