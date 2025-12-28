@@ -20,3 +20,16 @@
   to = "https://nicholasnadeau.com/:splat"
   status = 301
   force = true
+
+# Redirect transcension.ai to nicholasnadeau.com
+[[redirects]]
+  from = "https://transcension.ai/*"
+  to = "https://nicholasnadeau.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.transcension.ai/*"
+  to = "https://nicholasnadeau.com/:splat"
+  status = 301
+  force = true
