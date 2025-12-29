@@ -2,140 +2,16 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import Content from '~/components/widgets/Content.astro';
-import Brands from '~/components/widgets/NNBrands.astro';
 
 const metadata = {
-  title: 'Nicholas Nadeau | AI & Tech Innovator',
+  title: 'Nicholas Nadeau',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero -->
-  <Hero
-    id="hero"
-    title="Nicholas Nadeau"
-    tagline="Engineer | Founder | Investor | Mentor | Board Member"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Connect on LinkedIn',
-        href: 'https://www.linkedin.com/in/engnadeau/',
-        target: '_blank',
-      },
-      { variant: 'secondary', text: 'Learn More', href: '#about' },
-    ]}
-  >
-    <Fragment slot="subtitle">
-      Building intelligent systems that put people first <br />
-      From humanoid robots to Personal Intelligence™
-    </Fragment>
+  <Hero id="hero" title="Nicholas Nadeau">
+    <Fragment slot="subtitle"> Building Personal Intelligence — AI that amplifies human genius. </Fragment>
   </Hero>
-
-  <!-- About Me -->
-  <Content
-    id="about"
-    columns={2}
-    items={[
-      {
-        icon: 'tabler:brand-linkedin',
-        callToAction: {
-          target: '_blank',
-          text: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/engnadeau/',
-        },
-      },
-      {
-        icon: 'tabler:brand-github',
-        callToAction: {
-          target: '_blank',
-          text: 'GitHub',
-          href: 'https://github.com/engnadeau',
-        },
-      },
-    ]}
-    image={{
-      src: '~/assets/images/nicholas.jpg',
-      alt: 'Nicholas Nadeau',
-      loading: 'eager',
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Me</h2>
-      <p>
-        Dr. Nicholas Nadeau is an engineer and builder who develops systems that enhance human intelligence. His work
-        spans humanoid robots, cognitive neuroscience devices, and privacy-first AI. He scaled industrial 3D printers at
-        AON3D that now have parts on the ISS and Moon. As CTO of 1X, he led humanoid robot development, and later served
-        as CTO at SmartOne.ai during the AI/LLM revolution. He's currently Co-Founder and CTO of a stealth startup
-        building Personal Intelligence™ to give individuals control over their digital lives.
-      </p>
-      <br />
-      <p>
-        Nicholas co-founded AI Salon Montréal to connect Québec's AI ecosystem with global investors. He serves on the
-        board of Garage&Co and mentors through Creative Destruction Lab, Next AI, and Startupfest. With a Ph.D. in
-        robotics and AI, his work ensures intelligent systems serve people on their own terms.
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- Portfolio -->
-  <Brands
-    title="Ventures & Ecosystem"
-    id="portfolio"
-    subtitle="Companies, investments, board positions, and mentorship shaping tech."
-    icons={[]}
-    images={[
-      {
-        src: '~/assets/images/logos/1x.png',
-        alt: '1X',
-      },
-      {
-        src: '~/assets/images/logos/acrylicrobotics.png',
-        alt: 'Acrylic Robotics',
-      },
-      {
-        src: '~/assets/images/logos/ai-salon.png',
-        alt: 'AI Salon',
-      },
-      {
-        src: '~/assets/images/logos/aon3d.png',
-        alt: 'AON3D',
-      },
-      {
-        src: '~/assets/images/logos/bridgr.png',
-        alt: 'BRIDGR',
-      },
-      {
-        src: '~/assets/images/logos/cdl.png',
-        alt: 'Creative Destruction Lab',
-      },
-      {
-        src: '~/assets/images/logos/garage.png',
-        alt: 'Garage&Co',
-      },
-      {
-        src: '~/assets/images/logos/nextai.png',
-        alt: 'Next AI',
-      },
-      {
-        src: '~/assets/images/logos/smartone.png',
-        alt: 'SmartOne AI',
-      },
-      {
-        src: '~/assets/images/logos/transcension.png',
-        alt: 'Transcension AI',
-      },
-      {
-        src: '~/assets/images/logos/xmachina.png',
-        alt: 'X Machina AI',
-      },
-      {
-        src: '~/assets/images/logos/xpr.png',
-        alt: 'XPR Labs',
-      },
-    ]}
-  />
-
-  <!-- Blog -->
   <BlogLatestPosts id="posts" title="Latest Posts" />
 </Layout>

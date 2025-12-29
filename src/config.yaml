@@ -12,7 +12,7 @@ metadata:
   title:
     default: Nicholas Nadeau
     template: '%s — Nicholas Nadeau'
-  description: 'Dr. Nicholas Nadeau, CTO at SmartOne.ai, is a leader in AI and data solutions with a focus on innovation. With a Ph.D. in AI and engineering, Nicholas drives tech advancement and mentors startups through Creative Destruction Lab, Techstars, and NextAI. At SmartOne.ai, he pushes the boundaries of human-AI collaboration to transform data applications.'
+  description: 'Co-Founder & CTO at Onix, building Personal Intelligence. Previously CTO at 1X, SmartOne.ai, and AON3D. Ph.D. in robotics and AI.'
   robots:
     index: true
     follow: true
@@ -70,4 +70,4 @@ analytics:
       id: null # or "G-XXXXXXXXXX"
 
 ui:
-  theme: 'dark:only' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'light:only' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
