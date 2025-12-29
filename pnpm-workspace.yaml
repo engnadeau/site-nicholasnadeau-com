@@ -1,3 +1,6 @@
 onlyBuiltDependencies:
   - esbuild
   - sharp
+
+# Supply chain security: avoid installing recently published packages (14 days)
+minimumReleaseAge: 20160
