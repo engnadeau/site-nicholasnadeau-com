@@ -1,7 +1,9 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+import heroImage from '~/assets/images/hero-nicholas.jpg';
 
 const metadata = {
   title: 'Nicholas Nadeau',
@@ -10,8 +12,14 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero -->
-  <Hero id="hero" title="Nicholas Nadeau">
-    <Fragment slot="subtitle"> Building Personal Intelligence — AI that amplifies human genius. </Fragment>
-  </Hero>
+  <Hero2
+    id="hero"
+    title="Hey, I'm Nicholas"
+    subtitle="Building Personal Intelligence — AI that amplifies human genius."
+    image={{
+      src: heroImage,
+      alt: 'Nicholas Nadeau',
+    }}
+  />
   <BlogLatestPosts id="posts" title="Latest Posts" />
 </Layout>
