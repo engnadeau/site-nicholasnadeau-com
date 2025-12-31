@@ -2,9 +2,8 @@ import { getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
-    // { text: 'Home', href: '/' },
-    // { text: 'Posts', href: '/#posts' },
-    // { text: 'About', href: '/#about' },
+    { text: 'Blog', href: '/#posts' },
+    { text: 'Contact', href: 'https://www.linkedin.com/in/engnadeau' },
   ],
 };
 
