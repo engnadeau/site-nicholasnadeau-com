@@ -1,5 +1,10 @@
 {
   "name": "@onwidget/astrowind",
+  "pnpm": {
+    "overrides": {
+      "tar": ">=7.5.3"
+    }
+  },
   "version": "1.0.0-beta.48",
   "description": "AstroWind: A free template using Astro 4.0 and Tailwind CSS. Astro starter theme.",
   "type": "module",
