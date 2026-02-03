@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero2 from '~/components/widgets/Hero2.astro';
+import ScrollStory from '~/components/widgets/ScrollStory.astro';
+import SelectedWorks from '~/components/widgets/SelectedWorks.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 import heroImage from '~/assets/images/hero-nicholas.jpg';
@@ -11,15 +12,17 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero -->
-  <Hero2
+  <!-- Scroll-driven Story -->
+  <ScrollStory
     id="hero"
-    title="Hey, I'm Nicholas"
-    subtitle="Building Personal Intelligence — AI that amplifies human genius."
     image={{
       src: heroImage,
       alt: 'Nicholas Nadeau',
     }}
   />
-  <BlogLatestPosts id="posts" title="Latest Posts" />
+
+  <!-- Selected Works / Latest Posts -->
+  <SelectedWorks id="works" title="Selected" subtitle="NEW & RECENT">
+    <BlogLatestPosts title="" information="" />
+  </SelectedWorks>
 </Layout>

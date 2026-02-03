@@ -1,0 +1,74 @@
+---
+interface Props {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+}
+
+const { id, title = 'Selected', subtitle = 'NEW & RECENT' } = Astro.props;
+---
+
+<section class="selected-works relative not-prose py-16 md:py-24" {...id ? { id } : {}}>
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    function initWorksAnimations() {
+      // Animate section header
+      const worksHeader = document.querySelector('.works-header');
+      if (worksHeader) {
+        gsap.fromTo(
+          worksHeader,
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: worksHeader,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse',
+            },
+          }
+        );
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initWorksAnimations);
+    } else {
+      initWorksAnimations();
+    }
+
+    document.addEventListener('astro:after-swap', initWorksAnimations);
+  </script>
+
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+    <!-- Section header -->
+    <div class="works-header mb-12 md:mb-16">
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+        {title}
+        <br />
+        <span class="inline-flex items-baseline gap-3">
+          Works:
+          <span class="handwritten text-xl sm:text-2xl font-normal text-muted italic transform -rotate-3"
+            >{subtitle}</span
+          >
+        </span>
+      </h2>
+    </div>
+
+    <!-- Works will be populated by slot (BlogLatestPosts) -->
+    <slot />
+  </div>
+</section>
+
+<style>
+  .handwritten {
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.05em;
+  }
+</style>
