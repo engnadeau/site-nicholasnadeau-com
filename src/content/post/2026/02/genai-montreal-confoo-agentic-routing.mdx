@@ -1,0 +1,49 @@
+---
+publishDate: 2026-02-24
+author: Nicholas Nadeau
+title: 'Agentic AI Is a Routing Problem, Not an Intelligence Problem'
+excerpt: 'A talk on why agents fail in production and how embedding-based routing, expertise graphs, and the abstention pattern build resilient agentic systems.'
+image: ~/assets/images/post/2025/2026-02_genai-montreal-confoo-agentic-routing.jpg
+category: Speaking
+tags:
+  - ai
+  - agentic ai
+  - routing
+  - embeddings
+  - montreal
+  - confoo
+  - genai montreal
+  - onix
+---
+
+I gave a talk at [GenAI Montreal](https://www.meetup.com/generative-ai-montreal/events/313234678/)'s special [ConFoo](https://confoo.ca/) edition meetup at Hotel Bonaventure in Montreal. The event brought together Montreal's software development, Cloud-Native, AI, and CTO communities for a multi-community breakout evening.
+
+## The Core Argument
+
+Everyone is racing to make agents smarter: bigger models, more tools, more reasoning. But agents that survive production aren't the smartest ones. They're the ones with the best routing.
+
+Agents don't fail because they can't reason. They fail because they don't know what they don't know.
+
+## Key Patterns
+
+### Expertise Graphs Over Chains of Thought
+
+Most agent architectures have one model doing everything: routing, reasoning, and responding. It's like making the surgeon also do triage, billing, and physical therapy. Not because they can't, but because they shouldn't.
+
+Instead of chains, I proposed using expertise graphs where queries are routed via embedding similarity, a nearest-neighbor lookup, not a reasoning task. This is semantic dispatch: deterministic, parallelizable, and scaling to thousands of specialists where LLM-based tool selection breaks down.
+
+### Agents That Know What They Don't Know
+
+The most underrated capability in agentic AI is not knowing the answer and saying so. The abstention pattern gives every specialist a confidence threshold. Below it, the agent hands off rather than guesses. A well-calibrated small model beats an overconfident large model in production.
+
+### Budget-Aware Routing
+
+Every agent call costs tokens, time, and money. The routing layer should be budget-aware: route simple tasks to cheap, fast specialists and allocate more resources for complex ones. This is operations engineering, not AI research, and it's the difference between a demo and a product.
+
+## Takeaways
+
+1. **Stop asking your LLM to route.** Use embeddings. Routing is a similarity problem, not a reasoning problem.
+2. **Build agents that can say "I don't know."** Calibration is a feature, not a bug.
+3. **Think in graphs, not chains.** Pipelines break. Graphs adapt.
+
+Stop making your AI smarter. Start making it honest about what it doesn't know.

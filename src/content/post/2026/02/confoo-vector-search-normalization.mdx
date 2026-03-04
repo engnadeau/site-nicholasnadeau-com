@@ -1,0 +1,48 @@
+---
+publishDate: 2026-02-27
+author: Nicholas Nadeau
+title: 'Why Your Vector Search Is Silently Wrong (And How to Fix It)'
+excerpt: 'A ConFoo 2026 talk on the silent normalization bug breaking RAG systems, and the one-liner that fixes it.'
+image: ~/assets/images/post/2025/2026-02_confoo-vector-search-normalization.jpg
+category: Speaking
+tags:
+  - ai
+  - vector search
+  - embeddings
+  - rag
+  - confoo
+  - montreal
+  - onix
+---
+
+I spoke at [ConFoo 2026](https://confoo.ca/) in Montreal about a silent bug that breaks vector search systems: unnormalized embeddings.
+
+## The Story
+
+A major consulting firm had a broken RAG system. Their plan was to spend months and six figures on human annotation to fix it. The actual problem? Their vectors weren't normalized. One line of code, and it worked.
+
+The dangerous part: the system was returning results the entire time. They looked plausible. They were just ranked wrong.
+
+## Why Normalization Matters
+
+When vectors aren't normalized, your search stops measuring semantic similarity and starts measuring magnitude. Longer documents score higher regardless of relevance. No error, no warning, just wrong results.
+
+This isn't just a cosine similarity issue. It hits all three common metrics (cosine, dot product, Euclidean). When vectors are normalized, all three give identical rankings. When they're not, all bets are off.
+
+## The State of Embedding Models
+
+I tested 25+ embedding models from every major provider. Most normalize (OpenAI, Google, BGE). Some are close but not quite (Mistral's Codestral at 0.988, Qwen 0.6B at 0.999). And some are completely off: IBM Granite R2 outputs norms of 17 and 30.
+
+The scariest part: IBM's older Granite models all output norm 1.0. The R2 versions changed this with no migration guide. If you upgraded without checking, your index is now incoherent.
+
+## The Fix
+
+Two lines of code. Compute the norms. Divide. That's it.
+
+But the fix isn't just normalizing once. Put an assertion in your embedding pipeline. Check norms after round-tripping through your database (quantization can drift them). Match your query operator to your index operator class in pgvector, or Postgres will silently ignore your index and do a full sequential scan.
+
+## Takeaways
+
+Before you add complexity, verify your foundations work. When something isn't working, the instinct is to add more data, more training, more infrastructure. Sometimes the answer is one diagnostic check and one line of code in the layer you never looked at.
+
+Check your norms.
