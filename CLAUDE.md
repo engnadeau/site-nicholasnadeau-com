@@ -91,7 +91,10 @@ grep -rn '[—–…]\|&mdash;\|&ndash;\|&hellip;' src/   # the characters thems
 grep -rn '[^-]--[^-]' src/content/post/             # SmartyPants sources
 ```
 
-The second should print nothing. The first should print nothing except the two known press release datelines above, in `2024-02-15_smartone-acquires-nadeau-innovations.md` and `2025-01_ai-salon-montreal.mdx`. Any other hit is a bug.
+The second should print nothing. The first has three known hits, and any others are a bug:
+
+- the two press release datelines above, in `2024-02-15_smartone-acquires-nadeau-innovations.md` and `2025-01_ai-salon-montreal.mdx`
+- `src/pages/[...blog]/[category]/[...page].astro`, which puts a dash in the paginated category page title. This one is an outstanding violation, not an exception, and should be fixed on its own.
 
 The `--` check is scoped to `src/content/post/` on purpose: CSS custom properties (`--aw-color-primary`) would flood it otherwise.
 
