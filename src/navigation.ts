@@ -12,7 +12,6 @@ export const footerData = {
   secondaryLinks: [
     { text: 'Home', href: '/' },
     { text: 'Posts', href: '/#posts' },
-    { text: 'About', href: '/#about' },
   ],
   socialLinks: [
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
