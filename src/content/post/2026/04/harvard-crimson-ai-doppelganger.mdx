@@ -1,0 +1,47 @@
+---
+publishDate: 2026-04-24
+author: Nicholas Nadeau
+title: 'The Harvard Crimson on Michael Rich, His Onix, and What Expert Fidelity Actually Takes'
+excerpt: 'The Crimson profiled Dr. Michael Rich of the Digital Wellness Lab and the Onix built on three decades of his clinical work. His own review is the most useful one we have had: the facts hold, the humor does not yet.'
+image: ~/assets/images/post/2025/2026-04_harvard-crimson-ai-doppelganger.jpg
+category: Media
+tags:
+  - onix
+  - press
+  - expert fidelity
+  - personal intelligence
+  - digital wellness
+  - ai
+  - privacy
+  - evals
+---
+
+The Harvard Crimson [profiled Dr. Michael L. Rich](https://www.thecrimson.com/article/2026/4/24/michael-rich-onix-artificial-intelligence-wellness-doppelganger/), the Boston Children's Hospital pediatrician who founded and directs the [Digital Wellness Lab](https://digitalwellnesslab.org/), and one of the experts who has built an Onix. The piece is mostly about him and only incidentally about us, which is the correct proportion.
+
+## Suspicion Is the Right Starting Position
+
+Rich has spent three decades studying what interactive media does to kids, going back to the era when the worry was the "couch potato phenomenon." He now argues that "screen time is an obsolete concept," because screens are in every built environment we occupy. He is also, in his own words, "deeply suspicious of AI."
+
+He agreed to build an Onix anyway, and framed it without any inflation: "This is a way of scaling up my knowledge, my clinical experience. Will it be perfect? I'm sure it will not."
+
+I would rather work with that expert than an enthusiastic one. Suspicion is what makes someone read the output line by line before it ships.
+
+## The Facts Hold, the Voice Is Harder
+
+The most useful thing in the article is Rich's own report card. His Onix "holds solid in terms of the kind of factual stuff," he says, but struggles with his tone and storytelling: "It's hard for AI to have a sense of humor. I've been trying to squeeze a sense of humor into my onix as best I can."
+
+That matches what we see internally. Grounding a model in a bounded corpus is the tractable half of the problem, dark data included: the clinical protocols, working papers, and frameworks that were never published anywhere. Voice is the hard half, and it is not a prompt. It is an iteration loop with the expert as the reviewer of record.
+
+Which is also why the reporters could not test his Onix: it was on pause for upgrades while we worked on exactly that. Unavailable beats unfaithful.
+
+The piece also notes that WIRED got an Onix to wander off its expertise by asking about the NBA playoffs, and the Crimson reproduced the effect with Harry Styles. That is a fair hit. Holding scope under an off-topic question is a failure mode we measure, and one we are still tightening.
+
+## The Skeptic in the Piece Is Not Wrong
+
+Adam Rodman of Beth Israel Deaconess told the Crimson that "there is not an LLM based system right now that I would say is capable of making these decisions in a safe way at the moment." I do not argue with that, and it is not the claim an Onix makes. Rich draws the same line himself: AI's "Hallmark card level empathy" cannot do the human work of care. An Onix is not a doctor, and the day one starts sounding like a doctor is the day something has gone wrong.
+
+The article puts a number on the general-purpose alternative: OpenAI's o3 hallucinating on roughly a third of questions about real public figures. That gap is the whole reason to build this way, with one expert's curated corpus, reviewed by that expert, on a system that never logs, analyzes, or monetizes the conversation. Privacy and fidelity are the same engineering problem from two directions. The less you collect, the more precisely you have to represent what you were actually given.
+
+Rich's closing thought is the one I keep returning to. With every patient, he says, he is "an amalgam of myself and my knowledge and their needs and hopes and dreams." No model does that. What a good one can do is carry the knowledge half further than a single clinician's calendar allows, so he can spend his hours on the rest.
+
+Read the full profile at [The Harvard Crimson](https://www.thecrimson.com/article/2026/4/24/michael-rich-onix-artificial-intelligence-wellness-doppelganger/).
