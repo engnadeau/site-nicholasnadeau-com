@@ -12,7 +12,7 @@ tags:
   - data
 ---
 
-**Montreal, Canada** — [SmartOne](https://smartone.ai/blog/smartone-acquires-nadeau-innovations-nicholas-nadeau-new-cto/) announced today the acquisition of Nadeau Innovations, a consultancy renowned for its work in AI/ML, robotics, and emerging technologies. Dr. Nicholas Nadeau, the founder of Nadeau Innovations, will join SmartOne as their new Chief Technology Officer (CTO), bringing his extensive expertise to drive innovation, product development, and streamline data processes to accelerate positive and impactful AI.
+**Montreal, Canada.** [SmartOne](https://smartone.ai/blog/smartone-acquires-nadeau-innovations-nicholas-nadeau-new-cto/) announced today the acquisition of Nadeau Innovations, a consultancy renowned for its work in AI/ML, robotics, and emerging technologies. Dr. Nicholas Nadeau, the founder of Nadeau Innovations, will join SmartOne as their new Chief Technology Officer (CTO), bringing his extensive expertise to drive innovation, product development, and streamline data processes to accelerate positive and impactful AI.
 
 This acquisition marks a significant milestone for SmartOne, establishing its presence in Montreal and North America. With Dr. Nadeau's leadership, SmartOne is poised to lead in developing AI and data solutions that offer ethical, efficient, and innovative outcomes for businesses and the broader community.
 

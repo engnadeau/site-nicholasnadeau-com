@@ -17,7 +17,7 @@ Attended McGill Ventures' TechNova event, engaging in valuable conversations abo
 
 Discussed the practicalities of building and backing DeepTech companies with peers including Samuel Larivière (Boreal Ventures), Elisha Krauss (BDC Capital), and Chloé Archambault (Quantacet).
 
-Events like TechNova are crucial. While panels offer insights, the real value lies in the collisions—the spontaneous interactions between builders, funders, researchers, and students sharing knowledge.
+Events like TechNova are crucial. While panels offer insights, the real value lies in the collisions: the spontaneous interactions between builders, funders, researchers, and students sharing knowledge.
 
 Appreciation to the organizers: Kevin Sun, Christine Wu, Canyu Wu, and Naureen Ahmed. We need more opportunities like this to strengthen the ecosystem.
 

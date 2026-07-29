@@ -56,6 +56,34 @@ pnpm fix:eslint   # Auto-fix ESLint issues
 - `tailwind.config.js`: Tailwind customizations (colors, fonts, animations)
 - `tsconfig.json`: TypeScript config with path alias `~/*` → `src/*`
 
+### Writing Style
+
+**No em dashes. Simple punctuation only.** Periods, commas, and colons carry the load. This applies to every piece of authored text in this repo: blog posts, page copy, `src/config.yaml` metadata, component strings, commit messages, and PR descriptions.
+
+Banned characters and their entities:
+
+- `—` em dash (U+2014) and `&mdash;`
+- `–` en dash (U+2013) and `&ndash;`. Numeric ranges spell it out: `2023 to 2025`, not `2023–2025`
+- `…` ellipsis (U+2026). Use three periods only when quoting an actual elision
+- Prefer to avoid semicolons too. They usually mark a sentence that wants to be two
+
+Hyphens in compound words (`zero-to-one`, `AI-driven`) are fine.
+
+**Recast, do not substitute.** Swapping an em dash for a comma leaves a limp sentence. Split it into two sentences, or promote the aside to a colon. An em dash pair wrapping a long appositive usually wants to become a colon plus a list.
+
+**MDX trap:** Astro's markdown SmartyPants is on by default, so `--` renders as an en dash and `---` as an em dash even though the source file looks clean. Never type consecutive hyphens in prose.
+
+Verify before committing. Both should print nothing:
+
+```bash
+grep -rn '[—–…]\|&mdash;\|&ndash;\|&hellip;' src/   # the characters themselves
+grep -rn '[^-]--[^-]' src/content/post/             # SmartyPants sources
+```
+
+The second is scoped to `src/content/post/` on purpose: CSS custom properties (`--aw-color-primary`) would flood it otherwise.
+
+For a single prose file, `LC_ALL=C grep -n '[^ -~]' <file>` lists every non-ASCII character. Expect only deliberate ones (accents like Montréal, emoji); anything else is a smart quote or a stray dash.
+
 ### Content Management
 
 Blog posts use MDX format with frontmatter:

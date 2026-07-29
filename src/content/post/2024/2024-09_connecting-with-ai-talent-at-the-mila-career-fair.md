@@ -12,7 +12,7 @@ tags:
   - career fair
 ---
 
-A huge thank you to **Mila - Quebec Artificial Intelligence Institute** for hosting an incredible job fair! 🤗 It was inspiring to connect with so many talented grad students and researchers—the next generation of AI pioneers. 🚀
+A huge thank you to **Mila - Quebec Artificial Intelligence Institute** for hosting an incredible job fair! 🤗 It was inspiring to connect with so many talented grad students and researchers. They are the next generation of AI pioneers. 🚀
 
 Being part of this vibrant research and AI community is a privilege, and **SmartOne.ai** is grateful for the opportunity to engage with such promising individuals. We're excited about the future of AI and the amazing potential these brilliant minds bring to the table.
 
