@@ -38,7 +38,19 @@ export const getCanonical = (path = ''): string | URL => {
   return url;
 };
 
-/** */
+/**
+ * Build a site permalink from a slug.
+ *
+ * The guard below is a passthrough list: anything already addressable is returned untouched
+ * instead of being treated as a site-relative path.
+ *
+ * Do not add `javascript:` (or `data:`/`vbscript:`) here. It used to be in this list, which meant
+ * a `javascript:` slug was handed straight back and rendered into an href verbatim. Letting those
+ * schemes fall through to path building instead is what defuses them, since they get slugified and
+ * prefixed into an inert relative path. A script URL is never a legitimate permalink.
+ *
+ * Flagged by CodeQL as js/incomplete-url-scheme-check.
+ */
 export const getPermalink = (slug = '', type = 'page'): string => {
   let permalink: string;
 
