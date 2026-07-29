@@ -60,7 +60,8 @@ pnpm fix:eslint   # Auto-fix ESLint issues
 
 Blog posts use MDX format with frontmatter:
 
-- Located in `src/content/post/YYYY/YYY-MM_post-slug.mdx`
+- Located in `src/content/post/YYYY/MM/post-slug.mdx`
+- The filename (minus extension) becomes the URL, so folders are for organization only: `2026/07/nobody-asked.mdx` publishes at `/nobody-asked`
 - Supports components within markdown
 - Automatic reading time calculation
 - Image optimization and lazy loading
