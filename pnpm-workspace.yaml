@@ -4,3 +4,65 @@ onlyBuiltDependencies:
 
 # Supply chain security: avoid installing recently published packages (14 days)
 minimumReleaseAge: 20160
+
+# Security overrides for vulnerable transitive dependencies.
+#
+# Rule for this block: pin only WITHIN the package's existing major, using
+# pnpm's version-selector keys ("minimatch@3" vs "minimatch@9"). Every
+# advisory in this tree has an in-major patch, so nothing here changes a
+# consumer-facing API. Do not "fix" an advisory by jumping a major, since
+# that breaks the dependent rather than the vulnerability.
+#
+# Each entry exists only because a dependency we do not control pulls in a
+# vulnerable version. Delete an entry once the parent ships a patched range
+# on its own; `pnpm audit` is the check for whether it is still needed.
+#
+# Deliberately absent: brace-expansion. Its advisory (<=5.0.7) is only
+# patched in 5.0.8, whose CJS build exports an object instead of a callable,
+# so `require('brace-expansion')('a{b,c}d')` throws and every minimatch in
+# the tree breaks. It needs an upstream minimatch that adopts v5. See
+# https://github.com/engnadeau/site-nicholasnadeau-com/pull/198
+overrides:
+  # ReDoS and glob-matching correctness in the build-time glob stack.
+  minimatch@3: ^3.1.5
+  minimatch@9: ^9.0.9
+  picomatch@2: ^2.3.2
+  picomatch@4: ^4.0.5
+
+  # Archive and parser hardening: path traversal, entity expansion, and
+  # unbounded-input DoS. tar and fast-xml-parser were the critical ones.
+  tar: ^7.5.22
+  fast-xml-parser: ^5.10.1
+  svgo@3: ^3.3.4
+  svgo@4: ^4.0.2
+
+  # Prototype pollution and unsafe deserialization.
+  defu: ^6.1.7
+  devalue: ^5.8.2
+  flatted: ^3.4.3
+  lodash: ^4.18.1
+
+  # Parser DoS (quadratic or stack-overflow on hostile input).
+  ajv@6: ^6.15.0
+  ajv@8: ^8.20.0
+  js-yaml@4: ^4.3.0
+  yaml: ^2.9.0
+  smol-toml: ^1.7.1
+  diff@5: ^5.2.2
+
+  # HTTP layer: request smuggling, header injection, and URL parsing
+  # confusion. h3 and undici arrive via the Astro toolchain.
+  undici@7: ^7.29.0
+  h3@1: ^1.15.11
+  fast-uri@3: ^3.1.4
+
+  # Build toolchain: arbitrary file read/write and dev-server exposure.
+  # sharp and esbuild must be overridden rather than bumped as devDeps,
+  # because astro pins `sharp ^0.34` and its own esbuild internally.
+  # Always confirm these two with `pnpm build`, not just `pnpm check`,
+  # since the build is what exercises image optimization.
+  sharp: ^0.35.3
+  esbuild@0.27: ^0.28.1
+  vite@6: ^6.4.3
+  rollup: ^4.62.3
+  postcss: ^8.5.25
