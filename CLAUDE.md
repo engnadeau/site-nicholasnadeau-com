@@ -58,9 +58,9 @@ pnpm fix:eslint   # Auto-fix ESLint issues
 
 ### Writing Style
 
-**No em dashes. Simple punctuation only.** Periods, commas, and colons carry the load. This applies to every piece of authored text in this repo: blog posts, page copy, `src/config.yaml` metadata, component strings, commit messages, and PR descriptions.
+**No em dashes in prose or copy.** Simple punctuation only: periods, commas, and colons carry the load. The reason is that heavy em dash use is one of the loudest tells of machine-written text, and this site is a personal byline. This applies to sentences and body copy everywhere in the repo: blog posts, page copy, `src/config.yaml` metadata, component strings, commit messages, and PR descriptions.
 
-Banned characters and their entities:
+Avoid these characters and their entities:
 
 - `—` em dash (U+2014) and `&mdash;`
 - `–` en dash (U+2013) and `&ndash;`. Numeric ranges spell it out: `2023 to 2025`, not `2023–2025`
@@ -73,14 +73,27 @@ Hyphens in compound words (`zero-to-one`, `AI-driven`) are fine.
 
 **MDX trap:** Astro's markdown SmartyPants is on by default, so `--` renders as an en dash and `---` as an em dash even though the source file looks clean. Never type consecutive hyphens in prose.
 
-Verify before committing. Both should print nothing:
+#### The one exception: press release datelines
+
+A press release opens with a dateline, and the dash after the city is the format, not a stylistic choice. Leave those alone:
+
+```markdown
+**Montreal, Canada** — [SmartOne](...) announced today the acquisition of...
+**Montréal, QC – January 20, 2025** – [AI Salon](...), a global network of...
+```
+
+The exception is that opening dash only. The body of a press release follows the same no em dash rule as everything else. Do not invent new exceptions: if a dash feels necessary somewhere else, the sentence needs recasting instead.
+
+#### Verify before committing
 
 ```bash
 grep -rn '[—–…]\|&mdash;\|&ndash;\|&hellip;' src/   # the characters themselves
 grep -rn '[^-]--[^-]' src/content/post/             # SmartyPants sources
 ```
 
-The second is scoped to `src/content/post/` on purpose: CSS custom properties (`--aw-color-primary`) would flood it otherwise.
+The second should print nothing. The first should print nothing except the two known press release datelines above, in `2024-02-15_smartone-acquires-nadeau-innovations.md` and `2025-01_ai-salon-montreal.mdx`. Any other hit is a bug.
+
+The `--` check is scoped to `src/content/post/` on purpose: CSS custom properties (`--aw-color-primary`) would flood it otherwise.
 
 For a single prose file, `LC_ALL=C grep -n '[^ -~]' <file>` lists every non-ASCII character. Expect only deliberate ones (accents like Montréal, emoji); anything else is a smart quote or a stray dash.
 
