@@ -8,6 +8,21 @@ on:
     branches:
       - main
 
+# Scopes granted to the injected GITHUB_TOKEN. This block is required, not
+# cosmetic: with no `permissions` key the token inherits the repo/org default,
+# which can be read-and-write across contents, issues, packages, and more.
+# Naming any one scope implicitly sets every unnamed scope to `none`.
+#
+# `contents: read` is the only scope this workflow needs, for actions/checkout.
+# It never comments on a PR, pushes a commit, or publishes a package. That
+# matters because the install step runs lifecycle scripts from the whole
+# dependency tree, so a compromised package would otherwise inherit whatever
+# write access the default happened to grant.
+#
+# Flagged by CodeQL as actions/missing-workflow-permissions.
+permissions:
+  contents: read
+
 jobs:
   ci:
     name: Build and Check
@@ -16,8 +31,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
+      # No `version` input on purpose: the action reads `packageManager` from
+      # package.json, which keeps CI on the same pnpm as local checkouts.
+      # Without that pin, action-setup v6 would default to pnpm 11.
+      # Must stay ahead of setup-node below, since `cache: pnpm` needs pnpm
+      # on PATH to locate the store.
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
 
       - name: Setup Node.js 22
         uses: actions/setup-node@v6

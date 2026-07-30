@@ -57,7 +57,8 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     metadata = {},
   } = data;
 
-  const slug = cleanSlug(id); // cleanSlug(rawSlug.split('/').pop());
+  // File name is the URL slug; the YYYY/MM/ folders only organize content on disk.
+  const slug = cleanSlug(id.split('/').pop());
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
 
