@@ -19,14 +19,14 @@ Avoid these characters and their entities:
 
 - `—` em dash (U+2014) and `&mdash;`
 - `–` en dash (U+2013) and `&ndash;`. Numeric ranges spell it out: `2023 to 2025`, not `2023–2025`
-- `…` ellipsis (U+2026). Use three periods only when quoting an actual elision
+- `…` ellipsis (U+2026). Typing `...` does not dodge this: SmartyPants converts it to the character at build time. Only use it inside a verbatim quotation
 - Prefer to avoid semicolons too. They usually mark a sentence that wants to be two
 
 Hyphens in compound words (`zero-to-one`, `AI-driven`) are fine.
 
 **Recast, do not substitute.** Swapping an em dash for a comma leaves a limp sentence. Split it into two sentences, or promote the aside to a colon. An em dash pair wrapping a long appositive usually wants to become a colon plus a list.
 
-**MDX trap:** markdown SmartyPants is on by default, so `--` renders as an en dash and `---` as an em dash even though the source file looks clean. Never type consecutive hyphens in prose.
+**MDX trap:** markdown SmartyPants is on by default, so the source file can grep clean and still render a banned character. `--` becomes an en dash, `---` becomes an em dash, and `...` becomes a `…`. Never type consecutive hyphens or three periods in prose. Checking the source is not enough, which is why the checks below include a `dist/` pass.
 
 ### The one exception: press release datelines
 
@@ -42,15 +42,17 @@ The exception is that opening dash only. The body of a press release follows the
 ### Verify before committing
 
 ```bash
-grep -rn '[—–…]\|&mdash;\|&ndash;\|&hellip;' src/   # the characters themselves
-grep -rn '[^-]--[^-]' src/content/post/             # SmartyPants sources
+grep -rn '[—–…]\|&mdash;\|&ndash;\|&hellip;' src/       # the characters themselves
+grep -rn '[^-]--[^-]\|\.\.\.' src/content/post/         # SmartyPants sources
+grep -rlo '[—–…]' dist/ --exclude-dir=_astro            # what actually shipped
 ```
 
-The second should print nothing. The first has three known hits, and any others are a bug:
+Known hits, so anything else is a bug:
 
 - the two press release datelines above, in `2024/02/smartone-acquires-nadeau-innovations.md` and `2025/01/ai-salon-montreal.mdx`
-- `src/pages/[...blog]/[category]/[...page].astro`, which puts a dash in the paginated category page title. This one is an outstanding violation, not an exception, and should be fixed on its own.
+- `esther-dyson-trade-offs-and-transparency.mdx`, where a `...` sits inside a verbatim quotation and renders as `…`
+- `src/pages/[...blog]/[category]/[...page].astro`, which puts a dash in the paginated category page title, so every paginated category page in `dist/` carries one. That is an outstanding violation, not an exception, and should be fixed on its own.
 
-The `--` check is scoped to `src/content/post/` on purpose: CSS custom properties (`--aw-color-primary`) would flood it otherwise.
+The `--` check is scoped to `src/content/post/` on purpose: CSS custom properties (`--aw-color-primary`) would flood it otherwise. The `dist/` check skips `_astro` for the same reason, since a vendored `.ellipsis:after { content: "…" }` rule lives in the bundled CSS.
 
 For a single prose file, `LC_ALL=C grep -n '[^ -~]' <file>` lists every non-ASCII character. Expect only deliberate ones (accents like Montréal, emoji); anything else is a smart quote or a stray dash.
