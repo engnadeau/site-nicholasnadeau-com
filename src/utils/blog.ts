@@ -57,14 +57,8 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     metadata = {},
   } = data;
 
-  // Posts are filed under YYYY/MM/ (or legacy YYYY/YYYY-MM_name), but URLs are flat:
-  // keep only the filename and drop any leading date prefix.
-  const slug = cleanSlug(
-    id
-      .split('/')
-      .pop()
-      ?.replace(/^\d{4}-\d{2}(-\d{2})?[_-]/, '')
-  );
+  // File name is the URL slug; the YYYY/MM/ folders only organize content on disk.
+  const slug = cleanSlug(id.split('/').pop());
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
 
