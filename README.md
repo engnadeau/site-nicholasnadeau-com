@@ -8,3 +8,13 @@
 This project uses `.astro` or `.md` files in the `src/pages/` directory to define routes by file name.
 
 Static assets can be added in `public/` (for non-transforming assets) or `src/assets/` (for direct imports and transformations).
+
+## Blog posts
+
+File the post under the year and month of its `publishDate`, and name the file exactly what the URL should be:
+
+```
+src/content/post/2026/07/nobody-asked.mdx   →   nicholasnadeau.com/nobody-asked
+```
+
+Kebab-case, no date prefix in the file name. The file name minus its extension _is_ the slug, so the `YYYY/MM/` folders only organize files on disk and never appear in the URL.
