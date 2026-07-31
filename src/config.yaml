@@ -11,7 +11,7 @@ site:
 metadata:
   title:
     default: Nicholas Nadeau
-    template: '%s | Nicholas Nadeau'
+    template: '%s — Nicholas Nadeau'
   description: 'Co-Founder & CTO at Onix, building Personal Intelligence. Previously CTO at 1X, SmartOne.ai, and AON3D. Ph.D. in robotics and AI.'
   robots:
     index: true

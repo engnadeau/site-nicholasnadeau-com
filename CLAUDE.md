@@ -13,7 +13,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Writing Style
 
-**No em dashes in prose or copy.** Simple punctuation only: periods, commas, and colons carry the load. The reason is that heavy em dash use is one of the loudest tells of machine-written text, and this site is a personal byline. This applies to sentences and body copy everywhere in the repo: blog posts, page copy, `src/config.yaml` metadata, component strings, commit messages, and PR descriptions.
+**No em dashes in prose or copy.** Simple punctuation only: periods, commas, and colons carry the load. The reason is that heavy em dash use is one of the loudest tells of machine-written text, and this site is a personal byline.
+
+The rule covers anything a reader reads as writing: blog posts, page copy, component strings, the `description` fields in `src/config.yaml`, commit messages, and PR descriptions. It does not cover page metadata, where a dash is a structural separator rather than punctuation in a sentence. See the exceptions below.
 
 Avoid these characters and their entities:
 
@@ -28,7 +30,16 @@ Hyphens in compound words (`zero-to-one`, `AI-driven`) are fine.
 
 **MDX trap:** markdown SmartyPants is on by default, so the source file can grep clean and still render a banned character. `--` becomes an en dash, `---` becomes an em dash, and `...` becomes a `…`. Never type consecutive hyphens or three periods in prose. Checking the source is not enough, which is why the checks below include a `dist/` pass.
 
-### The one exception: press release datelines
+### Exception 1: page metadata
+
+Page titles are structure, not prose. A dash separating a title from a qualifier is doing a layout job that a comma cannot do, so leave these alone:
+
+- `metadata.title.template` in `src/config.yaml`, which appends the site name to every `<title>`
+- the `— Page N` suffix in the blog, tag, and category pagination titles under `src/pages/[...blog]/`
+
+This covers the `<title>` and the `og:` and `twitter:` title tags that Astro derives from it. It does not extend to `description` fields, which are sentences and follow the rule.
+
+### Exception 2: press release datelines
 
 A press release opens with a dateline, and the dash after the city is the format, not a stylistic choice. Leave those alone:
 
@@ -37,22 +48,28 @@ A press release opens with a dateline, and the dash after the city is the format
 **Montréal, QC – January 20, 2025** – [AI Salon](...), a global network of...
 ```
 
-The exception is that opening dash only. The body of a press release follows the same no em dash rule as everything else. Do not invent new exceptions: if a dash feels necessary somewhere else, the sentence needs recasting instead.
+That opening dash only. The body of a press release follows the same no em dash rule as everything else.
+
+Two exceptions is the whole list. Do not add a third: if a dash feels necessary in a sentence, the sentence needs recasting instead.
 
 ### Verify before committing
 
 ```bash
-grep -rn '[—–…]\|&mdash;\|&ndash;\|&hellip;' src/       # the characters themselves
-grep -rn '[^-]--[^-]\|\.\.\.' src/content/post/         # SmartyPants sources
-grep -rlo '[—–…]' dist/ --exclude-dir=_astro            # what actually shipped
+grep -rn '[—–…]\|&mdash;\|&ndash;\|&hellip;' src/content/post/   # the characters themselves
+grep -rn '[^-]--[^-]\|\.\.\.' src/content/post/                 # SmartyPants sources
+
+# Rendered copy, with <head> stripped so exempt page titles do not drown the signal.
+# Run pnpm build first.
+grep -rl '[—–…]' dist --include=index.html | while read -r f; do
+  sed 's|.*</head>||' "$f" | grep -q '[—–…]' && echo "$f"
+done
 ```
 
-Known hits, so anything else is a bug:
+All three should return only these known hits, so anything else is a bug:
 
 - the two press release datelines above, in `2024/02/smartone-acquires-nadeau-innovations.md` and `2025/01/ai-salon-montreal.mdx`
-- `esther-dyson-trade-offs-and-transparency.mdx`, where a `...` sits inside a verbatim quotation and renders as `…`
-- `src/pages/[...blog]/[category]/[...page].astro`, which puts a dash in the paginated category page title, so every paginated category page in `dist/` carries one. That is an outstanding violation, not an exception, and should be fixed on its own.
+- `2026/07/esther-dyson-trade-offs-and-transparency.mdx`, where a `...` sits inside a verbatim quotation and renders as `…`
 
-The `--` check is scoped to `src/content/post/` on purpose: CSS custom properties (`--aw-color-primary`) would flood it otherwise. The `dist/` check skips `_astro` for the same reason, since a vendored `.ellipsis:after { content: "…" }` rule lives in the bundled CSS.
+The source checks are scoped to `src/content/post/` deliberately. Running them over all of `src/` buries the signal under exempt page titles, CSS custom properties (`--aw-color-primary`), and a vendored `.ellipsis:after { content: "…" }` rule. The `dist/` check is the one that covers page copy and component strings, and it is the only check that sees what SmartyPants actually produced.
 
 For a single prose file, `LC_ALL=C grep -n '[^ -~]' <file>` lists every non-ASCII character. Expect only deliberate ones (accents like Montréal, emoji); anything else is a smart quote or a stray dash.
