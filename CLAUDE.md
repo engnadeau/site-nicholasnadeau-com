@@ -9,6 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Path alias `~/*` maps to `src/*`
 - Blog permalinks follow the pattern `/%slug%`
 - Post files go in `src/content/post/YYYY/MM/` matching their `publishDate`, named exactly what the URL slug should be: kebab-case, no date prefix. The filename minus extension _is_ the slug, so the folders only organize files on disk (`2026/07/nobody-asked.mdx` publishes at `/nobody-asked`)
+- Post hero images go in `src/assets/images/post/YYYY/`, where `YYYY` is the post's `publishDate` year. Name them `YYYY-MM_<slug>.jpg`
 - `src/config.yaml` controls site metadata and feature toggles
 
 ## Writing Style
