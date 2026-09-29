@@ -3,7 +3,7 @@ publishDate: 2026-09-29
 draft: true
 author: Nicholas Nadeau
 title: 'Someone Used to Draw the Boxes'
-excerpt: 'Implementation got cheap, and the ritual that kept a team on the same page quietly disappeared with it. Context engineering is how you get it back, and it is a company discipline, not a prompt trick.'
+excerpt: 'Implementation got cheap, and the rituals that kept a team on the same page went with it. Context engineering, run at the company level, is how you get the agreement back.'
 category: Technology
 tags:
   - ai
@@ -14,7 +14,7 @@ tags:
   - onix
 ---
 
-{/* DRAFT TODO before publishing: (1) Francis and Sylvain fill in or cut their two marked sections below; (2) Francis confirms the roundtable attribution with no attendee names; (3) add a hero image at src/assets/images/post/2026/2026-09_someone-used-to-draw-the-boxes.jpg; (4) set the real publishDate and move the file to the matching YYYY/MM folder. */}
+{/* DRAFT TODO before publishing: (1) Francis and Sylvain fill in or cut their two marked sections below, and if they cut them, change "Written with" to "Thanks to"; (2) Francis confirms the roundtable attribution with no attendee names, since attendees will recognize themselves; (3) Nicholas confirms the digital twin facts: do engineers opt in, can they read their own twin, and what happens to a twin when someone leaves; (4) Nicholas confirms he is fine putting the ADHD line in writing; (5) whoever owns the privacy policy signs off on the one sentence about usage analytics; (6) confirm Sylvain's affiliation, since metanoia.vc redirects to LinkedIn; (7) add a hero image at src/assets/images/post/2026/2026-09_someone-used-to-draw-the-boxes.jpg; (8) set the real publishDate and move the file to the matching YYYY/MM folder. */}
 
 _Written with [Francis Lacoste](https://thevpe.coach) of The VPE Coach and [Sylvain Carle](https://metanoia.vc) of Metanoia. This post grew out of a talk I gave at the Terra Agentika lunch in Montréal in August, and the conversation around the table afterwards._
 
@@ -22,37 +22,39 @@ When I started writing software nearly twenty years ago, in C++, a senior engine
 
 I was the agent. Considerably slower than today's agents, and not as good.
 
-Those diagrams went stale, everyone knows that. But the act of drawing them did something we didn't have a name for. It was a ritual that put the team, and often the whole company, in the same room long enough to agree on what we were building, why, and how it was supposed to behave. We could ask "is this actually what we want?" before the expensive part started.
+Those diagrams went stale. Everyone knows that, and they were often wrong to begin with. But the act of drawing them did something we didn't have a name for. It was a ritual that put the team, and often the whole company, in the same room long enough to argue about what we were building, why, and how it was supposed to behave. We could ask "is this actually what we want?" before the expensive part started. The value was the argument, not the diagram.
 
-## Implementation got cheap. Specification stopped happening.
+## Implementation got cheap. The rituals stopped happening.
 
-In the two years since Claude Code and agentic programming took off, writing code has become the cheap part. The pull now is to skip the boxes: prototype first, ship first, figure out the interfaces and the technical debt later. The spec shrinks to "this is what I want, make no mistakes."
+Agile retired the big diagram twenty years ago, for good reasons. What it kept were other rituals: sprint planning, pair programming, code review, guilds. All of them existed for the same reason the diagram did. Building the wrong thing was expensive, so it paid to get people talking first.
 
-For a founder hacking alone, or two co-founders chasing feedback, that's great. I work that way at the start of every company. But past a certain size, removing the ritual has a cost, and the cost is silos. Engineering drifts from go-to-market, sure. The part that surprised me is that engineers stop talking to each other. They talk to their agents more than to the person at the next desk. Pair programming fades. The guild model that Spotify made popular, where every Python or React developer across the org trades tips, fades with it. We spend more time with skills downloaded from the internet than with our own peers.
+Since Claude Code arrived in early 2025 and agentic programming took off, writing code has become the cheap part. The pull now is to skip the talking: prototype first, ship first, figure out the interfaces and the technical debt later. The spec shrinks to "this is what I want, make no mistakes."
 
-And you end up with one developer running every new tool all night long, shipping more than anyone else, while the rest of the team falls behind. A rising tide is supposed to lift all boats. Here it lifts one.
+For a founder hacking alone, or two co-founders chasing feedback, that's great. I work that way at the start of every company. But past a certain size, losing the rituals has a cost, and it shows up in two ways.
 
-What disappeared is team convergence. That's the problem worth solving, and I don't think it's an engineering problem.
+The first is the old one: with no shared moment to agree on what we're building, engineering drifts away from go-to-market and marketing. The second is new. Engineers stop talking to each other. They talk to their agents more than to the person at the next desk. Pair programming fades. The guild model that Spotify made popular, where every Python or React developer across the org trades tips, fades with it. We spend more time with skills downloaded from the internet than with our own peers. And you end up with one developer running every new tool all night long, shipping more than anyone else, while the rest of the team falls behind. A rising tide should lift all boats, not just the one 10x developer with all the cool tools.
+
+What disappeared is team convergence. That's not only an engineering problem, and the fix isn't only an engineering fix.
 
 ## Context engineering is a company discipline
 
-Context engineering showed up as a developer trick: put the right files, docs, and examples into the model's window and it does better work. True, and too small. The same idea applies to the whole company.
+Context engineering showed up as a developer trick: put the right files, docs, and examples into the model's window and it does better work. That's true, but it's bigger than code.
 
-Most of us know the [C4 model](https://c4model.com/) for software architecture: context, containers, components, code. C4 stops at the system. I've started thinking about a level further out, a C0, where the company itself is the diagram. What does it look like when go-to-market is a container? When marketing, sales, support, and even your users and customers are all things you can query?
+Most of us know the [C4 model](https://c4model.com/) for software architecture. Its four core levels stop at the system, and even its landscape view maps software, not the company. I've started thinking about a level further out, a C0, where the company itself is the diagram. Go-to-market is a container. Marketing, sales, support, and even your users and customers are things you can query.
 
 Concretely:
 
 - The user stories that come out of customer interviews land in the engineering tracker as real stories, not as a summary of a summary three meetings later.
-- Marketing can see what's coming down the pipeline, and what slipped, and plan the content calendar around it without asking anyone.
-- A weekly summary of what the team actually did exists by default, so when I write our SR&ED claim at the end of the year, it's grounded in the record and not in my memory.
+- Marketing can see what's coming down the pipeline, and what slipped, and plan the content calendar around it.
+- A weekly summary of what the team actually did exists by default, so when I write our SR&ED claim (Canada's R&D tax credit) at the end of the year, it's grounded in the record and not in my memory.
 
 We were never able to do this before, because writing that context down by hand goes stale in five minutes. The only way it works is just-in-time: fetch what's true now, when someone needs it. That became possible in the last couple of years, with MCP servers, APIs that agents can call, and models good enough to use them.
 
-It also changes the old software buying logic. We used to buy one suite that did everything, Salesforce or Odoo, because it kept all the context in one place. Now you can pick the best tool for each team and connect the context afterwards.
+It also changes an old trade-off. We used to buy one suite that did everything, Salesforce or Odoo, and the case for it was real: one data model, one permission model, one source of truth. That advantage has become the constraint. You pay for a seat for everyone who needs context, and context an agent can now fetch across tools. Five connected tools can still disagree with each other, but when the query happens at the moment someone asks, it's cheaper to reconcile them than to force every team into one tool.
 
 ## Share the context, not the credentials
 
-At Onix, the company context lives in a handful of tools, and each one answers one question:
+For us, the company context lives in a handful of tools, and each one answers one question:
 
 - **Attio**: what customers said
 - **Linear**: what is being built
@@ -62,54 +64,57 @@ At Onix, the company context lives in a handful of tools, and each one answers o
 
 Our go-to-market team lives in Attio. I don't want engineers learning to navigate a CRM, and I don't want to pay for more seats and more SaaS sprawl. The same goes the other way: I don't want marketing digging through GitHub. But they regularly need to know things like "is this really how our privacy architecture works?", and the true answer lives in the code.
 
-They don't need the access. They need the context. So the interface does the work: a question goes in, an answer grounded in the code comes out, and nobody creates a GitHub account for the sales team. Permissions still apply, and they matter more, not less, once everyone can ask.
+They don't need the access. They need the context. So the interface does the work: a question goes in, an answer grounded in the code comes out, and nobody creates a GitHub account for the sales team. Permissions still apply. The bot answers from the code, it doesn't hand out the repo.
 
-Our harness for this is honestly simple. It's mostly built on [OpenCode](https://opencode.ai), with a small Slack bot on top. Yours will look different, and a lot of teams can get far with a Claude Team plan and a few connectors. What matters is that the company owns the harness, not each individual.
+Our harness for this is simple. It's mostly built on [OpenCode](https://opencode.ai), with a small Slack bot on top. Yours will look different, and a lot of teams can get far with a Claude Team plan and a few connectors. What matters is that the company owns the harness, not each individual.
+
+There's a fair objection to all of this, and someone will raise it. Access isn't alignment. The old ritual worked because it forced people into a room to disagree out loud, and everything I've described so far takes a reason to be in the room away. Marketing checks the pipeline without asking. Sales gets an answer from the code without talking to an engineer. Do that everywhere and you've built a very efficient silo, where everyone is informed and nobody agrees.
+
+My answer is that most of what we used to do in those rooms was moving information, not arguing about intent. Status updates, "is this shipped yet?", "what did the customer actually say?" Agents can keep that information fresh for free. So automate the information transfer, and spend the human time you get back on the part that was always the point: deciding what to build and why.
+
+## Close the loop
+
+A one-off query is open loop. Closing it is the work.
+
+We run scheduled jobs that turn raw activity into summary files: what's top of mind this week, what customers said, what shipped. Everyone reads the same summary instead of each person's agent refetching and re-deriving the same context, which is also cheaper in tokens.
+
+A real example from the day of the talk: someone on our go-to-market team works with the health and wellness experts who build their models on Onix. An expert wanted to know how their model was doing in production. Before, that meant a new dashboard request to me. Now she queries our product analytics herself. (Conversations are end-to-end encrypted and stored locally on the user's device, so neither we nor the expert can read them. What we have is usage analytics, and that's enough to answer the question.) The expert's feedback from that call then goes to the person who owns our evals, and it becomes test and training data. Feedback reaches the product without five meetings to schedule, everyone's interpretation of it, and a Google spreadsheet.
+
+The loop works on the backlog too. I have jobs that read our Linear tickets and tell me, bluntly, which ones are stale, or point out that I already fixed this in some PR and five tickets can close. Semantic search across tools is where these agents shine. They don't delete anything. They surface it, and a human decides. The backlog stays pruned because someone finally knows what's in it.
 
 ## Linting at the company level
 
 On the engineering side, the first symptom we hit was divergence. Every repo grew its own agent skills, and they drifted apart. Everyone had a slightly different way of querying PostHog, writing a PR, or planning a feature.
 
-So we pulled it all into one private plugin that the whole team installs:
+So we pulled it all into one private Claude Code plugin that the whole team installs with two commands. Two of the skills do most of the work. One plans a feature: it interviews you like a PM, pulls in the context, and runs the plan past a chain of reviewer agents, in the format we agreed on as a team. That's the format of the old ritual, rebuilt. The argument itself still happens between people, when the plan goes up for review. The other skill ships: it writes the pull request, links the issues, and lays out the QA plan the way we agreed to write it.
 
-```bash
-/plugin marketplace add Onix-AI/onix-skills
-/plugin install onix-skills@onix
-```
+We even standardized on [Simplified Technical English](https://www.asd-ste100.org/), short, active, and concise, so the output reads the same no matter who, or what, wrote it. One line in our shared context does a lot of the work: "I have ADHD. Be clear and concise." The output got short, direct, and action-oriented. So tell the agent you have ADHD, and it'll work better with you.
 
-Two of the skills do most of the work. One plans a feature: it interviews you like a PM, pulls in the context, and runs the plan past a sequence of reviewers before anyone writes code. That's the old boxes ritual, rebuilt so the team has agreed on how a plan should look. The other ships: it writes the pull request, links the issues, and lays out the QA plan the way we agreed to write it. We even standardized on [Simplified Technical English](https://www.asd-ste100.org/), short, active, and concise, so the output reads the same no matter who, or what, wrote it.
+The payoff shows up at onboarding. A new intern installs one plugin and has the same tools and the same access to context as the rest of the team within minutes. People ship a PR on their first day. They don't have the same judgment on day one, and that still takes the team.
 
-The payoff shows up at onboarding. A new intern installs one plugin and is at the same platform level, with the same access to context, as the rest of the team within minutes. People ship a PR on their first day.
+We went one step further and built digital twins of our developers. Every Claude Code or OpenCode session emits traces, and by default Claude Code deletes its local transcripts after 30 days. If you don't save them, you lose a record of how your team actually reasons about the codebase, or you leave it sitting in a vendor's chat history. We combine those traces with PR and commit history to build a reviewer agent for each engineer's area. Before you ask a teammate to review your work in their domain, their twin has taken care of a lot of the low-hanging fruit.
 
-We went one step further and built digital twins of our developers. Every Claude Code or OpenCode session emits traces, and most teams throw them away. That's a record of how your team actually reasons about the codebase. We combine it with PR and commit history to build a reviewer agent for each engineer's area. Before you ask a teammate to review your work in their domain, their twin has already caught the obvious things they would have flagged.
+I think of it as linting at the company level. Early in my career, code review meant arguing about curly braces, and we never got to the real question: should this feature exist? Linters and formatters ended the curly brace arguments. The twins do the same thing one level up. They clear the ground for the conversation with your teammate, they don't replace it, so that conversation can be about intent. And with the volume of PRs these tools generate, you need that. We're producing more code than people can read.
 
-I think of it as linting at the company level. Early in my career, code review meant arguing about curly braces, and we never got to the real question: should this feature exist? Linters ended the curly brace arguments. The twins do the same thing one level up, so the human conversation can be about intent. And with the volume of PRs these tools generate, you need that. We're producing more code than people can read.
-
-## At the company level, context engineering is a loop
-
-A one-off query is open loop. The interesting part is closing it.
-
-We run scheduled jobs that turn raw activity into summary files: what's top of mind this week, what customers said, what shipped. Everyone reads the same summary instead of each person's agent refetching and re-deriving the same context, which is also cheaper in tokens.
-
-Here's a real example from the day of the talk. Someone on our go-to-market team works with the health and wellness experts who build their models on Onix. An expert wanted to know how their model was doing in production. Before, that meant a new dashboard request to me. Now she queries the usage analytics herself. (We can't see anyone's conversations: they're encrypted and stored on the person's phone. What we have is aggregate behaviour, which is enough to answer the question.) What the expert says on that call then goes straight to the person who owns our evals, and becomes part of the test and training data. Feedback reaches the product without five meetings, three interpretations, and a spreadsheet.
-
-The loop works on the backlog too. I have jobs that read our Linear tickets and tell me, bluntly, which ones are stale, or point out that I already fixed this in some PR and five tickets can close. Semantic search across tools is where these agents shine. They don't delete anything. They surface it, and a human decides. The backlog stays pruned because someone finally knows what's in it.
+There's a part I don't have an answer for yet. The yelling was how I learned. Getting a box, getting it wrong, and getting told why is how juniors built judgment. If the twin catches it first, where does the next senior engineer come from?
 
 ## What the table added
 
 The best part of these lunches is the conversation after the talks. A few threads stuck with me.
 
-**Review the plan, not the code.** Someone at the table has stopped doing line-by-line human code review. Their view is that the bugs that survive now are rarely bad code. The code does exactly what the plan said, and the plan was ambiguous: a forgotten rule, an unhandled edge case, a misread intent. So they review the plan relentlessly, with several models, until they know what the code will look like before it's generated. Three days of planning, fifteen minutes of code. That's the boxes again.
+**Review the plan, not the code.** One person at the table has stopped doing human code review. On a greenfield team of two, they run cross-model reviews until only nitpicks are left. Another argued that the thing to review now is the plan. In their experience, the bugs that survive are rarely bad code. The code does exactly what the plan said, and the plan was ambiguous: a forgotten rule, an unhandled edge case, a misread intent. So they review the plan relentlessly, with several models, until they know what the code will look like before it's generated. Three days of planning, fifteen minutes of code, and hopefully no more code review at the end. That's the boxes again.
 
-The pushback was fair: you often don't know what you want until you have a working version, and by then you have ten thousand lines. Our answer at Onix is closer to Basecamp's [Shape Up](https://basecamp.com/shapeup): make bets, spike the risky part, and put the investment at both ends. On one end, the spec. On the other, ephemeral environments that spin up the whole stack for every change, so anyone can QA real behaviour, mobile included. The middle, writing the lines of code, is becoming the commodity. As someone else put it, napkins are still cheaper than code, and it's a trap to jump into prototyping just because implementation got cheap.
+The pushback was fair: you often don't know what you want until you have a working version, and by then you have ten thousand lines. Our answer is closer to Basecamp's [Shape Up](https://basecamp.com/shapeup): make bets, spike the risky part, and put the investment at both ends. On one end, the spec. On the other, ephemeral environments that spin up the whole stack for every change, so anyone can QA real behaviour, mobile included. The middle, writing the lines of code, is becoming the commodity.
 
-**Watch for people spinning the wheel.** On performance reviews, the table mostly agreed that the framework hasn't changed: output is business value, and seniority is measured by your impact on the team and the company. The expectations changed. Everyone is expected to work full stack now, to hold more in their head at once, and to have product taste. One failure mode got a name I'll keep: developers who spin the wheel. They get a bad result, send the agent for another try, and another, burning tokens without the judgment to know when and where to step in. The other failure mode is older: the brilliant jerk who force-pushes alone. Both show up in 360 reviews that include people outside engineering, which is how I run reviews now.
+As someone else put it, napkins are still cheaper than code, and it's a trap to jump into prototyping just because implementation got cheap.
+
+**Watch for people spinning the wheel.** On performance reviews, the table mostly agreed that the framework hasn't changed: output is business value, and seniority is measured by your impact on the team and the company. The expectations changed. Everyone is expected to work full stack now, to hold more in their head at once, and to have product taste. One failure mode got a name I'll keep: developers who spin the wheel. They get a bad result, send the agent for another try, and another, burning tokens without the judgment to know when and where to step in. The spinner shows up in the numbers: lots of tokens and iterations, few outcomes. The other failure mode is older: the brilliant jerk who force-pushes alone. The jerk shows up in 360 reviews that include people outside engineering, which is how I run reviews now.
 
 {/* Francis: this is the natural spot for your VPE coaching view on performance and hiring. What are you seeing across the teams you coach? */}
 
-**Your context has a git history. Read it.** Someone suggested treating the churn in your context files as a signal. If your QA skill gets edited five times a week, your QA process has a problem. If a file nobody has touched in a year is still loaded into every session, that's a problem too. A wiki that humans and agents both read and write came up as a good interface, whether that's Karpathy's LLM wiki pattern in plain git or something like Obsidian on top.
+**Your context has a git history. Read it.** Someone suggested treating the churn in your context files as a signal. If your QA skill gets edited five times a week, your QA process has a problem. If a file nobody has touched in a year is still loaded into every session, that's a problem too. A wiki that humans and agents both read and write came up as a good interface, for example Karpathy's LLM wiki pattern: plain markdown in git, with Obsidian as the reader.
 
-**Tell the agent how you read.** One small trick I shared: our shared context says, in effect, "I have ADHD. Be clear and concise." Combined with STE, the output got short, direct, and action-oriented overnight. Neurodiversity-friendly writing turns out to be good writing.
+{/* Sylvain: space here for the investor and community angle. What does this look like across the portfolio, or at AI Salon? */}
 
 ## What this means for engineering leaders
 
@@ -118,13 +123,11 @@ If you lead an engineering team, your scope just got bigger. A few things I'd ta
 1. **Put the ritual back.** Planning is the step agents made optional, so make it deliberate. Review plans harder than you review code.
 2. **Draw the C0 boxes.** Map where each kind of company context lives, who needs it, and how they get it without new accounts.
 3. **Own the harness as a team.** Shared skills and shared agents in one place, installed on day one, updated together.
-4. **Close the loops.** Every recurring meeting that exists to move information between teams is a candidate for a scheduled job, with a human deciding what to do with the output.
-5. **Keep your traces.** They're a record of how your company thinks.
-
-{/* Sylvain: space here for the investor and community angle. What does this look like across the portfolio, or at AI Salon? */}
+4. **Close the loops.** Every recurring meeting that exists only to move information between teams is a candidate for a scheduled job, with a human deciding what to do with the output. Keep the meetings where people argue about intent.
+5. **Keep your traces.** Change the retention setting, save the sessions, and treat them as the team's record.
 
 ## The company is a context container
 
-That last point is the one I care most about. The skills, the summaries, the twins, the traces: that's your company's accumulated judgment. If it only lives in one vendor's chat history, or evaporates when a session closes, you're giving it away. Held on purpose, it's your data sovereignty, and increasingly it's your moat.
+The skills, the summaries, the twins, the traces: together they're the new diagram, the shared record of how the team agreed to think. It lives in the company now, not on one senior engineer's whiteboard. If it only lives in one vendor's chat history, or evaporates when a session closes, you're renting it, and a team can't converge on something it doesn't hold. Held on purpose, in files the team owns, it's your data sovereignty.
 
-Someone used to draw the boxes. Implementation got cheap, but somebody still has to draw them, and now the diagram includes the whole company.
+Someone used to draw the boxes. Implementation got cheap, but somebody still has to draw them, and now the diagram is the whole company.
