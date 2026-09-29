@@ -14,7 +14,7 @@ tags:
   - onix
 ---
 
-{/* DRAFT TODO before publishing: (1) Francis and Sylvain fill in or cut their two marked sections below, and if they cut them, change "Written with" to "Thanks to"; (2) Francis confirms the roundtable attribution with no attendee names, since attendees will recognize themselves; (3) Nicholas confirms the digital twin facts: do engineers opt in, can they read their own twin, and what happens to a twin when someone leaves; (4) Nicholas confirms he is fine putting the ADHD line in writing; (5) whoever owns the privacy policy signs off on the one sentence about usage analytics; (6) confirm Sylvain's affiliation, since metanoia.vc redirects to LinkedIn; (7) add a hero image at src/assets/images/post/2026/2026-09_someone-used-to-draw-the-boxes.jpg; (8) set the real publishDate and move the file to the matching YYYY/MM folder. */}
+{/* DRAFT TODO before publishing: (1) Francis and Sylvain fill in or cut their two marked sections below, and if they cut them, change "Written with" to "Thanks to"; (2) Francis confirms the roundtable attribution with no attendee names, since attendees will recognize themselves, including whether the napkins line was Nicholas or another speaker; (3) Nicholas confirms the digital twin facts: do engineers opt in, can they read their own twin, and what happens to a twin when someone leaves; (4) Nicholas confirms he is fine putting the ADHD line in writing; (5) whoever owns the privacy policy signs off on the privacy parenthetical, specifically the words end-to-end encrypted and usage analytics; (6) confirm Sylvain's affiliation, since metanoia.vc redirects to LinkedIn; (7) add a hero image at src/assets/images/post/2026/2026-09_someone-used-to-draw-the-boxes.jpg; (8) set the real publishDate and move the file to the matching YYYY/MM folder. */}
 
 _Written with [Francis Lacoste](https://thevpe.coach) of The VPE Coach and [Sylvain Carle](https://metanoia.vc) of Metanoia. This post grew out of a talk I gave at the Terra Agentika lunch in Montréal in August, and the conversation around the table afterwards._
 
@@ -22,11 +22,11 @@ When I started writing software nearly twenty years ago, in C++, a senior engine
 
 I was the agent. Considerably slower than today's agents, and not as good.
 
-Those diagrams went stale. Everyone knows that, and they were often wrong to begin with. But the act of drawing them did something we didn't have a name for. It was a ritual that put the team, and often the whole company, in the same room long enough to argue about what we were building, why, and how it was supposed to behave. We could ask "is this actually what we want?" before the expensive part started. The value was the argument, not the diagram.
+Those diagrams went stale. Everyone knows that, and they were often wrong to begin with. But the act of drawing them did something we didn't have a name for. It was a ritual that put the team, and often the whole company, in the same room long enough to argue about what we were building, why, and how it was supposed to behave. We could ask "is this actually what we want?" before the expensive part started.
 
 ## Implementation got cheap. The rituals stopped happening.
 
-Agile retired the big diagram twenty years ago, for good reasons. What it kept were other rituals: sprint planning, pair programming, code review, guilds. All of them existed for the same reason the diagram did. Building the wrong thing was expensive, so it paid to get people talking first.
+Agile moved most teams off the big up-front diagram, for good reasons. Other rituals took its place: sprint planning, pair programming, code review, guilds. All of them existed for the same reason the diagram did. Building the wrong thing was expensive, so it paid to get people talking first.
 
 Since Claude Code arrived in early 2025 and agentic programming took off, writing code has become the cheap part. The pull now is to skip the talking: prototype first, ship first, figure out the interfaces and the technical debt later. The spec shrinks to "this is what I want, make no mistakes."
 
@@ -50,7 +50,7 @@ Concretely:
 
 We were never able to do this before, because writing that context down by hand goes stale in five minutes. The only way it works is just-in-time: fetch what's true now, when someone needs it. That became possible in the last couple of years, with MCP servers, APIs that agents can call, and models good enough to use them.
 
-It also changes an old trade-off. We used to buy one suite that did everything, Salesforce or Odoo, and the case for it was real: one data model, one permission model, one source of truth. That advantage has become the constraint. You pay for a seat for everyone who needs context, and context an agent can now fetch across tools. Five connected tools can still disagree with each other, but when the query happens at the moment someone asks, it's cheaper to reconcile them than to force every team into one tool.
+It also changes an old trade-off. We used to buy one suite that did everything, Salesforce or Odoo, and the case for it was real: one data model, one permission model, one source of truth. Now that same suite means paying a seat for everyone who needs context, and an agent can fetch that context across tools instead. Five connected tools can still disagree with each other, but when the query happens at the moment someone asks, it's cheaper to reconcile them than to force every team into one tool.
 
 ## Share the context, not the credentials
 
@@ -64,13 +64,13 @@ For us, the company context lives in a handful of tools, and each one answers on
 
 Our go-to-market team lives in Attio. I don't want engineers learning to navigate a CRM, and I don't want to pay for more seats and more SaaS sprawl. The same goes the other way: I don't want marketing digging through GitHub. But they regularly need to know things like "is this really how our privacy architecture works?", and the true answer lives in the code.
 
-They don't need the access. They need the context. So the interface does the work: a question goes in, an answer grounded in the code comes out, and nobody creates a GitHub account for the sales team. Permissions still apply. The bot answers from the code, it doesn't hand out the repo.
+They don't need the access. They need the context. So the interface does the work: a question goes in, an answer grounded in the code comes out, and nobody creates a GitHub account for the sales team. Permissions still apply. The bot answers from the code. It doesn't hand out the repo.
 
 Our harness for this is simple. It's mostly built on [OpenCode](https://opencode.ai), with a small Slack bot on top. Yours will look different, and a lot of teams can get far with a Claude Team plan and a few connectors. What matters is that the company owns the harness, not each individual.
 
 There's a fair objection to all of this, and someone will raise it. Access isn't alignment. The old ritual worked because it forced people into a room to disagree out loud, and everything I've described so far takes a reason to be in the room away. Marketing checks the pipeline without asking. Sales gets an answer from the code without talking to an engineer. Do that everywhere and you've built a very efficient silo, where everyone is informed and nobody agrees.
 
-My answer is that most of what we used to do in those rooms was moving information, not arguing about intent. Status updates, "is this shipped yet?", "what did the customer actually say?" Agents can keep that information fresh for free. So automate the information transfer, and spend the human time you get back on the part that was always the point: deciding what to build and why.
+My answer is that most of what we used to do in those rooms was moving information, not arguing about intent. Status updates, "is this shipped yet?", "what did the customer actually say?" Agents can keep that information fresh, cheaply. So automate the information transfer, and spend the human time you get back on the part that was always the point: deciding what to build and why.
 
 ## Close the loop
 
@@ -88,15 +88,15 @@ On the engineering side, the first symptom we hit was divergence. Every repo gre
 
 So we pulled it all into one private Claude Code plugin that the whole team installs with two commands. Two of the skills do most of the work. One plans a feature: it interviews you like a PM, pulls in the context, and runs the plan past a chain of reviewer agents, in the format we agreed on as a team. That's the format of the old ritual, rebuilt. The argument itself still happens between people, when the plan goes up for review. The other skill ships: it writes the pull request, links the issues, and lays out the QA plan the way we agreed to write it.
 
-We even standardized on [Simplified Technical English](https://www.asd-ste100.org/), short, active, and concise, so the output reads the same no matter who, or what, wrote it. One line in our shared context does a lot of the work: "I have ADHD. Be clear and concise." The output got short, direct, and action-oriented. So tell the agent you have ADHD, and it'll work better with you.
+We even standardized on [Simplified Technical English](https://www.asd-ste100.org/), short, active, and concise, so the output reads the same no matter who, or what, wrote it. One line in our shared context does a lot of the work: "I have ADHD. Be clear and concise." The output got short, direct, and action-oriented. So tell the agent how you read, and it'll work better with you.
 
 The payoff shows up at onboarding. A new intern installs one plugin and has the same tools and the same access to context as the rest of the team within minutes. People ship a PR on their first day. They don't have the same judgment on day one, and that still takes the team.
 
-We went one step further and built digital twins of our developers. Every Claude Code or OpenCode session emits traces, and by default Claude Code deletes its local transcripts after 30 days. If you don't save them, you lose a record of how your team actually reasons about the codebase, or you leave it sitting in a vendor's chat history. We combine those traces with PR and commit history to build a reviewer agent for each engineer's area. Before you ask a teammate to review your work in their domain, their twin has taken care of a lot of the low-hanging fruit.
+We went one step further and built digital twins of our developers. Every Claude Code or OpenCode session emits traces, and by default Claude Code deletes its local transcripts after 30 days. If you don't save them, you lose a record of how your team actually reasons about the codebase. We combine those traces with PR and commit history to build a reviewer agent for each engineer's area. Before you ask a teammate to review your work in their domain, their twin has taken care of a lot of the low-hanging fruit.
 
-I think of it as linting at the company level. Early in my career, code review meant arguing about curly braces, and we never got to the real question: should this feature exist? Linters and formatters ended the curly brace arguments. The twins do the same thing one level up. They clear the ground for the conversation with your teammate, they don't replace it, so that conversation can be about intent. And with the volume of PRs these tools generate, you need that. We're producing more code than people can read.
+I think of it as linting at the company level. Early in my career, code review meant arguing about curly braces, and we never got to the real question: should this feature exist? Linters and formatters ended the curly brace arguments. The twins do the same thing one level up. They clear the ground for the conversation with your teammate. They don't replace it. That conversation can be about intent. And with the volume of PRs these tools generate, you need that. We're producing more code than people can read.
 
-There's a part I don't have an answer for yet. The yelling was how I learned. Getting a box, getting it wrong, and getting told why is how juniors built judgment. If the twin catches it first, where does the next senior engineer come from?
+There's a part I don't have an answer for yet. Getting a box back, getting it wrong, and getting told why is how I learned, and how juniors built judgment. If the twin catches it first, where does the next senior engineer come from?
 
 ## What the table added
 
@@ -108,7 +108,7 @@ The pushback was fair: you often don't know what you want until you have a worki
 
 As someone else put it, napkins are still cheaper than code, and it's a trap to jump into prototyping just because implementation got cheap.
 
-**Watch for people spinning the wheel.** On performance reviews, the table mostly agreed that the framework hasn't changed: output is business value, and seniority is measured by your impact on the team and the company. The expectations changed. Everyone is expected to work full stack now, to hold more in their head at once, and to have product taste. One failure mode got a name I'll keep: developers who spin the wheel. They get a bad result, send the agent for another try, and another, burning tokens without the judgment to know when and where to step in. The spinner shows up in the numbers: lots of tokens and iterations, few outcomes. The other failure mode is older: the brilliant jerk who force-pushes alone. The jerk shows up in 360 reviews that include people outside engineering, which is how I run reviews now.
+**Watch for people spinning the wheel.** On performance reviews, the table mostly agreed that the framework hasn't changed: output is business value, and seniority is measured by your impact on the team and the company. The expectations changed. Everyone is expected to work full stack now, to hold more in their head at once, and to have product taste. One failure mode got a name I'll keep: developers who spin the wheel. They get a bad result, send the agent for another try, and another, burning tokens without the judgment to know when and where to step in. Nobody at the table had a metric for it yet. The best guess was to look at tokens and iterations against outcomes. The other failure mode is older: the brilliant jerk who force-pushes alone. The jerk shows up in 360 reviews that include people outside engineering, which is how I run reviews now.
 
 {/* Francis: this is the natural spot for your VPE coaching view on performance and hiring. What are you seeing across the teams you coach? */}
 
@@ -124,10 +124,10 @@ If you lead an engineering team, your scope just got bigger. A few things I'd ta
 2. **Draw the C0 boxes.** Map where each kind of company context lives, who needs it, and how they get it without new accounts.
 3. **Own the harness as a team.** Shared skills and shared agents in one place, installed on day one, updated together.
 4. **Close the loops.** Every recurring meeting that exists only to move information between teams is a candidate for a scheduled job, with a human deciding what to do with the output. Keep the meetings where people argue about intent.
-5. **Keep your traces.** Change the retention setting, save the sessions, and treat them as the team's record.
+5. **Keep your traces.** Change the retention setting (`cleanupPeriodDays` in Claude Code) and save the sessions. Store them as securely as your code, because they can contain secrets.
 
 ## The company is a context container
 
-The skills, the summaries, the twins, the traces: together they're the new diagram, the shared record of how the team agreed to think. It lives in the company now, not on one senior engineer's whiteboard. If it only lives in one vendor's chat history, or evaporates when a session closes, you're renting it, and a team can't converge on something it doesn't hold. Held on purpose, in files the team owns, it's your data sovereignty.
+The skills, the summaries, the twins, the traces: together they're the new diagram, the shared record of how the team agreed to think. If that only lives in one vendor's chat history, or disappears when a session closes, the team doesn't really have it, and it can't converge on it. Held on purpose, in files the team owns, it's your data sovereignty.
 
 Someone used to draw the boxes. Implementation got cheap, but somebody still has to draw them, and now the diagram is the whole company.
