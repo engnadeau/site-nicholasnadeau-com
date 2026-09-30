@@ -34,6 +34,10 @@ For a founder hacking alone, or two co-founders chasing feedback, that's great. 
 
 With no shared moment to agree on what we're building, engineering drifts away from go-to-market and marketing. That drift is an old problem. Engineers also stop talking to each other, and that one is new. They talk to their agents more than to the person at the next desk. Pair programming fades. The guild model that Spotify made popular, where every Python or React developer across the org trades tips, fades with it. We spend more time with skills downloaded from the internet than with our own peers. And you end up with one developer running every new tool all night long, shipping more than anyone else, while the rest of the team falls behind. A rising tide should lift all boats, not just the one 10x developer with all the cool tools.
 
+The same worry came up at the lunch about performance reviews. Most of the table agreed that the framework hasn't changed: output is business value, and seniority is measured by your impact on the team and the company. The expectations changed. Everyone is expected to work full stack now, to hold more in their head at once, and to have product taste. One failure mode got a name I'll keep: developers who spin the wheel. They get a bad result, send the agent for another try, and another, burning tokens without the judgment to know when and where to step in. Nobody at the table had a metric for it yet. The best guess was to look at tokens and iterations against outcomes. The other failure mode is older: the brilliant jerk who force-pushes alone. The jerk shows up in 360 reviews that include people outside engineering, which is how I run reviews now.
+
+{/* Francis: add your VPE coaching view on performance and hiring here, as a section or a full quote in your own words. What are you seeing across the teams you coach? */}
+
 What disappeared is team convergence. That's not only an engineering problem, and the fix isn't only an engineering fix.
 
 ## Context engineering is a company discipline
@@ -76,23 +80,17 @@ Once the context is shared, information that used to travel through meetings can
 
 Shared context also helps a team converge on how it works. When every developer brings their own agent skills, the skills drift apart, and so do the plans and pull requests they produce. Pulling them into one shared set, agreed on as a team and installed on day one, brings back some of what the boxes gave us: a shared format for a plan, a shared bar for a pull request. A new hire gets the same context as everyone else within minutes. They don't get the same judgment on day one, and that still takes the team.
 
+Those shared files have a git history, and someone at the lunch suggested reading it. If your QA skill gets edited five times a week, your QA process has a problem. If a file nobody has touched in a year is still loaded into every session, that's a problem too. A wiki that humans and agents both read and write came up as a good interface, for example Karpathy's LLM wiki pattern: plain markdown in git, with Obsidian as the reader.
+
 I think of it as linting at the company level. Early in my career, code review meant arguing about curly braces, and we never got to whether the feature should exist. Linters and formatters ended the curly brace arguments. Shared skills and reviewer agents, built by the team from its own work (its agent sessions, its pull requests, its commits), can do the same thing one level up. They clear the ground so the conversation with your teammate can be about intent. And with the volume of code these tools generate, you need that. We're producing more code than people can read.
 
-Getting a box back, getting it wrong, and getting told why is how I learned, and how juniors built judgment. If an agent catches it first, I don't know yet where the next senior engineer comes from.
-
-## What the table added
-
-**Review the plan, not the code.** One person at the table has stopped doing human code review. On a greenfield team of two, they run cross-model reviews until only nitpicks are left. Another argued that the thing to review now is the plan. In their experience, the bugs that survive are rarely bad code. The code does exactly what the plan said, and the plan was ambiguous: a forgotten rule, an unhandled edge case, a misread intent. So they review the plan relentlessly, with several models, until they know what the code will look like before it's generated. Three days of planning, fifteen minutes of code, and hopefully no more code review at the end. That's the boxes again.
+The people at the lunch had pushed this further. One has stopped doing human code review. On a greenfield team of two, they run cross-model reviews until only nitpicks are left. Another argued that the thing to review now is the plan. In their experience, the bugs that survive are rarely bad code. The code does exactly what the plan said, and the plan was ambiguous: a forgotten rule, an unhandled edge case, a misread intent. So they review the plan relentlessly, with several models, until they know what the code will look like before it's generated. Three days of planning, fifteen minutes of code, and hopefully no more code review at the end. That's the boxes again.
 
 The pushback was fair: you often don't know what you want until you have a working version, and by then you have ten thousand lines. My answer is closer to Basecamp's [Shape Up](https://basecamp.com/shapeup): make bets, spike the risky part, and put the investment at both ends. On one end, the spec. On the other, test environments where anyone can check the real behaviour before it ships. The middle, writing the lines of code, is becoming the commodity.
 
 As someone else put it, napkins are still cheaper than code, and it's a trap to jump into prototyping just because implementation got cheap.
 
-**Watch for people spinning the wheel.** On performance reviews, the table mostly agreed that the framework hasn't changed: output is business value, and seniority is measured by your impact on the team and the company. The expectations changed. Everyone is expected to work full stack now, to hold more in their head at once, and to have product taste. One failure mode got a name I'll keep: developers who spin the wheel. They get a bad result, send the agent for another try, and another, burning tokens without the judgment to know when and where to step in. Nobody at the table had a metric for it yet. The best guess was to look at tokens and iterations against outcomes. The other failure mode is older: the brilliant jerk who force-pushes alone. The jerk shows up in 360 reviews that include people outside engineering, which is how I run reviews now.
-
-{/* Francis: add your VPE coaching view on performance and hiring here, as a section or a full quote in your own words. What are you seeing across the teams you coach? */}
-
-**Your context has a git history. Read it.** Someone suggested treating the churn in your context files as a signal. If your QA skill gets edited five times a week, your QA process has a problem. If a file nobody has touched in a year is still loaded into every session, that's a problem too. A wiki that humans and agents both read and write came up as a good interface, for example Karpathy's LLM wiki pattern: plain markdown in git, with Obsidian as the reader.
+Getting a box back, getting it wrong, and getting told why is how I learned, and how juniors built judgment. If an agent catches it first, I don't know yet where the next senior engineer comes from.
 
 {/* Sylvain: add the investor and community angle here, as a section or a full quote in your own words. What does this look like across the portfolio, or at AI Salon? */}
 
