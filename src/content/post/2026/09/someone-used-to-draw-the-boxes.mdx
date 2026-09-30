@@ -72,31 +72,17 @@ There's a fair objection to all of this, and someone will raise it. Access isn't
 
 My answer is that most of what we used to do in those rooms was moving information, not arguing about intent. Status updates, "is this shipped yet?", "what did the customer actually say?" Agents can keep that information fresh, cheaply. So automate the information transfer, and spend the human time you get back on the part that was always the point: deciding what to build and why.
 
-## Close the loop
-
-A one-off query is open loop. Closing it is the work.
-
-We run scheduled jobs that turn raw activity into summary files: what's top of mind this week, what customers said, what shipped. Everyone reads the same summary instead of each person's agent refetching and re-deriving the same context, which is also cheaper in tokens.
-
-A real example from the day of the talk: someone on our go-to-market team works with the health and wellness experts who build their models on Onix. An expert wanted to know how their model was doing in production. Before, that meant a new dashboard request to me. Now she queries our product analytics herself. The expert's feedback from that call then goes to the person who owns our evals, and it becomes test and training data. Feedback reaches the product without five meetings to schedule, everyone's interpretation of it, and a Google spreadsheet.
-
-The loop works on the backlog too. I have jobs that read our Linear tickets and tell me, bluntly, which ones are stale, or point out that I already fixed this in some PR and five tickets can close. Semantic search across tools is where these agents shine. They don't delete anything. They surface it, and a human decides. The backlog stays pruned because someone finally knows what's in it.
-
 ## Linting at the company level
 
-On the engineering side, the first symptom we hit was divergence. Every repo grew its own agent skills, and they drifted apart. Everyone had a slightly different way of querying PostHog, writing a PR, or planning a feature.
+Once the context is shared, two things get easier.
 
-So we pulled it all into one private Claude Code plugin that the whole team installs with two commands. Two of the skills do most of the work. One plans a feature: it interviews you like a PM, pulls in the context, and runs the plan past a chain of reviewer agents, in the format we agreed on as a team. That's the format of the old ritual, rebuilt. The argument itself still happens between people, when the plan goes up for review. The other skill ships: it writes the pull request, links the issues, and lays out the QA plan the way we agreed to write it.
+The first is closing the loop. Information that used to travel through meetings can travel on its own. A weekly summary of what customers said and what shipped. Feedback from a customer call that reaches the people building the product without five meetings to schedule and a spreadsheet. A backlog where an agent points out the stale tickets, and a human decides what to close. The agents surface things. People decide.
 
-We even standardized on [Simplified Technical English](https://www.asd-ste100.org/), short, active, and concise, so the output reads the same no matter who, or what, wrote it.
+The second is convergence on how the team works. When every developer brings their own agent skills, the skills drift apart, and so do the plans and pull requests they produce. Pulling them into one shared set, agreed on as a team and installed on day one, brings back some of what the boxes gave us: a shared format for a plan, a shared bar for a pull request. A new hire gets the same context as everyone else within minutes. They don't get the same judgment on day one, and that still takes the team.
 
-The payoff shows up at onboarding. A new intern installs one plugin and has the same tools and the same access to context as the rest of the team within minutes. People ship a PR on their first day. They don't have the same judgment on day one, and that still takes the team.
+I think of it as linting at the company level. Early in my career, code review meant arguing about curly braces, and we never got to the real question: should this feature exist? Linters and formatters ended the curly brace arguments. Shared skills and reviewer agents, built by the team from its own work, can do the same thing one level up. They clear the ground so the conversation with your teammate can be about intent. And with the volume of code these tools generate, you need that. We're producing more code than people can read.
 
-We went one step further and built digital twins of our developers. Every coding agent session emits traces, and by default Claude Code deletes its local transcripts after 30 days. If you don't save them, you lose a record of how your team actually reasons about the codebase. We combine those traces with PR and commit history to build reviewer agents, and the whole team builds them together. They're closer to archetypes than copies of people. Some engineers built a twin of themselves. Others built an archetype, like a mobile developer or an AI engineer, but each one is grounded in a real person and their work. Before you ask a teammate to review your work in their domain, the twin for that area has taken care of a lot of the low-hanging fruit.
-
-I think of it as linting at the company level. Early in my career, code review meant arguing about curly braces, and we never got to the real question: should this feature exist? Linters and formatters ended the curly brace arguments. The twins do the same thing one level up. They clear the ground for the conversation with your teammate. They don't replace it. They make room for it, so that conversation can be about intent. And with the volume of PRs these tools generate, you need that. We're producing more code than people can read.
-
-There's a part I don't have an answer for yet. Getting a box back, getting it wrong, and getting told why is how I learned, and how juniors built judgment. If the twin catches it first, where does the next senior engineer come from?
+There's a part I don't have an answer for yet. Getting a box back, getting it wrong, and getting told why is how I learned, and how juniors built judgment. If an agent catches it first, where does the next senior engineer come from?
 
 ## What the table added
 
@@ -104,7 +90,7 @@ The best part of these lunches is the conversation after the talks. A few thread
 
 **Review the plan, not the code.** One person at the table has stopped doing human code review. On a greenfield team of two, they run cross-model reviews until only nitpicks are left. Another argued that the thing to review now is the plan. In their experience, the bugs that survive are rarely bad code. The code does exactly what the plan said, and the plan was ambiguous: a forgotten rule, an unhandled edge case, a misread intent. So they review the plan relentlessly, with several models, until they know what the code will look like before it's generated. Three days of planning, fifteen minutes of code, and hopefully no more code review at the end. That's the boxes again.
 
-The pushback was fair: you often don't know what you want until you have a working version, and by then you have ten thousand lines. Our answer is closer to Basecamp's [Shape Up](https://basecamp.com/shapeup): make bets, spike the risky part, and put the investment at both ends. On one end, the spec. On the other, ephemeral environments that spin up the whole stack for every change, so anyone can QA real behaviour, mobile included. The middle, writing the lines of code, is becoming the commodity.
+The pushback was fair: you often don't know what you want until you have a working version, and by then you have ten thousand lines. My answer is closer to Basecamp's [Shape Up](https://basecamp.com/shapeup): make bets, spike the risky part, and put the investment at both ends. On one end, the spec. On the other, test environments where anyone can check the real behaviour before it ships. The middle, writing the lines of code, is becoming the commodity.
 
 As someone else put it, napkins are still cheaper than code, and it's a trap to jump into prototyping just because implementation got cheap.
 
@@ -124,10 +110,10 @@ If you lead an engineering team, your scope just got bigger. A few things I'd ta
 2. **Draw the C0 boxes.** Map where each kind of company context lives, who needs it, and how they get it without new accounts.
 3. **Own the harness as a team.** Shared skills and shared agents in one place, installed on day one, updated together.
 4. **Close the loops.** Every recurring meeting that exists only to move information between teams is a candidate for a scheduled job, with a human deciding what to do with the output. Keep the meetings where people argue about intent.
-5. **Keep your traces.** Change the retention setting (`cleanupPeriodDays` in Claude Code) and save the sessions. Store them as securely as your code, because they can contain secrets.
+5. **Keep your traces.** Every agent session is a record of how your team reasons. Save it on purpose, and store it as securely as your code, because it can contain secrets.
 
 ## The company is a context container
 
-The skills, the summaries, the twins, the traces: together they're the new diagram, the shared record of how the team agreed to think. If that only lives in one vendor's chat history, or disappears when a session closes, the team doesn't really have it, and it can't converge on it. Held on purpose, in files the team owns, it's your data sovereignty.
+The skills, the summaries, the reviewer agents, the traces: together they're the new diagram, the shared record of how the team agreed to think. If that only lives in one vendor's chat history, or disappears when a session closes, the team doesn't really have it, and it can't converge on it. Held on purpose, in files the team owns, it's your data sovereignty.
 
 Someone used to draw the boxes. Implementation got cheap, but somebody still has to draw them, and now the diagram is the whole company.
