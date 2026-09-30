@@ -22,7 +22,7 @@ When I started writing software nearly twenty years ago, in C++, a senior engine
 
 I was the agent. Considerably slower than today's agents, and not as good.
 
-Those diagrams went stale. Everyone knows that, and they were often wrong to begin with. But the act of drawing them did something we didn't have a name for. It was a ritual that put the team, and often the whole company, in the same room long enough to argue about what we were building, why, and how it was supposed to behave. We could ask "is this actually what we want?" before the expensive part started.
+Those diagrams went stale, and they were often wrong to begin with. But the act of drawing them did something we didn't have a name for. It was a ritual that put the team, and often the whole company, in the same room long enough to argue about what we were building, why, and how it was supposed to behave. We could ask "is this actually what we want?" before the expensive part started.
 
 ## Implementation got cheap. The rituals stopped happening.
 
@@ -30,9 +30,9 @@ Agile moved most teams off the big up-front diagram, for good reasons. Other rit
 
 Since Claude Code arrived in early 2025 and agentic programming took off, writing code has become the cheap part. The pull now is to skip the talking: prototype first, ship first, figure out the interfaces and the technical debt later. The spec shrinks to "this is what I want, make no mistakes."
 
-For a founder hacking alone, or two co-founders chasing feedback, that's great. I work that way at the start of every company. But past a certain size, losing the rituals has a cost, and it shows up in two ways.
+For a founder hacking alone, or two co-founders chasing feedback, that's great. I work that way at the start of every company. But past a certain size, losing the rituals has a cost.
 
-The first is the old one: with no shared moment to agree on what we're building, engineering drifts away from go-to-market and marketing. The second is new. Engineers stop talking to each other. They talk to their agents more than to the person at the next desk. Pair programming fades. The guild model that Spotify made popular, where every Python or React developer across the org trades tips, fades with it. We spend more time with skills downloaded from the internet than with our own peers. And you end up with one developer running every new tool all night long, shipping more than anyone else, while the rest of the team falls behind. A rising tide should lift all boats, not just the one 10x developer with all the cool tools.
+With no shared moment to agree on what we're building, engineering drifts away from go-to-market and marketing. That drift is an old problem. Engineers also stop talking to each other, and that one is new. They talk to their agents more than to the person at the next desk. Pair programming fades. The guild model that Spotify made popular, where every Python or React developer across the org trades tips, fades with it. We spend more time with skills downloaded from the internet than with our own peers. And you end up with one developer running every new tool all night long, shipping more than anyone else, while the rest of the team falls behind. A rising tide should lift all boats, not just the one 10x developer with all the cool tools.
 
 What disappeared is team convergence. That's not only an engineering problem, and the fix isn't only an engineering fix.
 
@@ -66,25 +66,21 @@ Our go-to-market team lives in Attio. I don't want engineers learning to navigat
 
 They don't need the access. They need the context. So the interface does the work: a question goes in, an answer grounded in the code comes out, and nobody creates a GitHub account for the sales team. Permissions still apply.
 
-There's a fair objection to all of this, and someone will raise it. Access isn't alignment. The old ritual worked because it forced people into a room to disagree out loud, and everything I've described so far takes a reason to be in the room away. Marketing checks the pipeline without asking. Sales gets an answer from the code without talking to an engineer. Do that everywhere and you've built a very efficient silo, where everyone is informed and nobody agrees.
+Access isn't alignment, though. The old ritual worked because it forced people into a room to disagree out loud, and everything I've described so far takes a reason to be in the room away. Marketing checks the pipeline without asking. Sales gets an answer from the code without talking to an engineer. Do that everywhere and you've built a very efficient silo, where everyone is informed and nobody agrees.
 
-My answer is that most of what we used to do in those rooms was moving information, not arguing about intent. Status updates, "is this shipped yet?", "what did the customer actually say?" Agents can keep that information fresh, cheaply. So automate the information transfer, and spend the human time you get back on the part that was always the point: deciding what to build and why.
+My answer is that most of what we used to do in those rooms was moving information, not arguing about intent. Status updates, "is this shipped yet?", "what did the customer actually say?" Agents can keep that information fresh, cheaply. So automate the information transfer, and spend the human time you get back on deciding what to build and why.
 
 ## Linting at the company level
 
-Once the context is shared, two things get easier.
+Once the context is shared, information that used to travel through meetings can travel on its own. A weekly summary of what customers said and what shipped. Feedback from a customer call that reaches the people building the product without five meetings to schedule and a spreadsheet. A backlog where an agent points out the stale tickets, and a human decides what to close. The agents surface things. People decide.
 
-The first is closing the loop. Information that used to travel through meetings can travel on its own. A weekly summary of what customers said and what shipped. Feedback from a customer call that reaches the people building the product without five meetings to schedule and a spreadsheet. A backlog where an agent points out the stale tickets, and a human decides what to close. The agents surface things. People decide.
+Shared context also helps a team converge on how it works. When every developer brings their own agent skills, the skills drift apart, and so do the plans and pull requests they produce. Pulling them into one shared set, agreed on as a team and installed on day one, brings back some of what the boxes gave us: a shared format for a plan, a shared bar for a pull request. A new hire gets the same context as everyone else within minutes. They don't get the same judgment on day one, and that still takes the team.
 
-The second is convergence on how the team works. When every developer brings their own agent skills, the skills drift apart, and so do the plans and pull requests they produce. Pulling them into one shared set, agreed on as a team and installed on day one, brings back some of what the boxes gave us: a shared format for a plan, a shared bar for a pull request. A new hire gets the same context as everyone else within minutes. They don't get the same judgment on day one, and that still takes the team.
+I think of it as linting at the company level. Early in my career, code review meant arguing about curly braces, and we never got to whether the feature should exist. Linters and formatters ended the curly brace arguments. Shared skills and reviewer agents, built by the team from its own work (its agent sessions, its pull requests, its commits), can do the same thing one level up. They clear the ground so the conversation with your teammate can be about intent. And with the volume of code these tools generate, you need that. We're producing more code than people can read.
 
-I think of it as linting at the company level. Early in my career, code review meant arguing about curly braces, and we never got to the real question: should this feature exist? Linters and formatters ended the curly brace arguments. Shared skills and reviewer agents, built by the team from its own work (its agent sessions, its pull requests, its commits), can do the same thing one level up. They clear the ground so the conversation with your teammate can be about intent. And with the volume of code these tools generate, you need that. We're producing more code than people can read.
-
-There's a part I don't have an answer for yet. Getting a box back, getting it wrong, and getting told why is how I learned, and how juniors built judgment. If an agent catches it first, where does the next senior engineer come from?
+Getting a box back, getting it wrong, and getting told why is how I learned, and how juniors built judgment. If an agent catches it first, I don't know yet where the next senior engineer comes from.
 
 ## What the table added
-
-The best part of these lunches is the conversation after the talks. A few threads stuck with me.
 
 **Review the plan, not the code.** One person at the table has stopped doing human code review. On a greenfield team of two, they run cross-model reviews until only nitpicks are left. Another argued that the thing to review now is the plan. In their experience, the bugs that survive are rarely bad code. The code does exactly what the plan said, and the plan was ambiguous: a forgotten rule, an unhandled edge case, a misread intent. So they review the plan relentlessly, with several models, until they know what the code will look like before it's generated. Three days of planning, fifteen minutes of code, and hopefully no more code review at the end. That's the boxes again.
 
