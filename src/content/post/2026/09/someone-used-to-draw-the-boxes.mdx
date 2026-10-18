@@ -74,8 +74,6 @@ Most of what we used to do in those rooms was moving information, not arguing ab
 
 ## Linting at the company level
 
-Once the context is shared, information that used to travel through meetings can travel on its own. A weekly summary of what customers said and what shipped. Feedback from a customer call that reaches the people building the product without five meetings to schedule and a spreadsheet. A backlog where an agent points out the stale tickets, and a human decides what to close. The agents surface things. People decide.
-
 Shared context also helps a team converge on how it works. When every developer brings their own agent skills, the skills drift apart, and so do the plans and pull requests they produce. Pulling them into one shared set, agreed on as a team and installed on day one, brings back some of what the boxes gave us: a shared format for a plan, a shared bar for a pull request. A new hire gets the same context as everyone else within minutes. They don't get the same judgment on day one, and that still takes the team.
 
 Those shared files have a git history, and it's worth reading. If your QA skill gets edited five times a week, your QA process has a problem. If a file nobody has touched in a year is still loaded into every session, that's a problem too. A wiki that humans and agents both read and write is a good interface for them, for example Karpathy's LLM wiki pattern: plain markdown in git, with Obsidian as the reader.
@@ -84,7 +82,7 @@ Early in my career, code review meant arguing about curly braces, and we never g
 
 The review that matters most has moved upstream. The bugs that survive now are rarely bad code. The code does exactly what the plan said, and the plan was ambiguous: a forgotten rule, an unhandled edge case, a misread intent. So review the plan hardest, before the code exists.
 
-Getting a box back, getting it wrong, and getting told why is how I learned, and how juniors built judgment. If an agent catches it first, I don't know yet where the next senior engineer comes from.
+That shift has a cost I haven't solved. Getting a box back, getting it wrong, and getting told why is how I learned, and how juniors built judgment. If an agent catches the mistake first, I don't know yet where the next senior engineer comes from.
 
 {/* TODO Sylvain: replace the lorem ipsum with your quote on the investor and community angle. Edit the lead-in if you want. */}
 
@@ -98,11 +96,11 @@ If you lead an engineering team, your scope just got bigger.
 
 1. **Put the ritual back.** Planning is the step agents made optional, so make it deliberate. Review plans harder than you review code.
 2. **Draw the C0 boxes.** Map where each kind of company context lives, who needs it, and how they get it without new accounts.
-3. **Own the harness as a team.** Shared skills and shared agents in one place, installed on day one, updated together.
+3. **Own your agent skills as a team.** Shared skills and reviewer agents in one place, installed on day one, updated together.
 4. **Close the loops.** Every recurring meeting that exists only to move information between teams is a candidate for a scheduled job, with a human deciding what to do with the output. Keep the meetings where people argue about intent.
 
 ## The company is a context container
 
-The skills, the summaries, the reviewer agents: together they're the new diagram, the shared record of how the team agreed to think. If that only lives in one vendor's chat history, or disappears when a session closes, the team doesn't really have it, and it can't converge on it. Held on purpose, in files the team owns, it's your data sovereignty.
+The skills, the summaries, the reviewer agents: together they're the new diagram, the shared record of how the team agreed to think. If that only lives in one vendor's chat history, or disappears when a session closes, the team doesn't really have it, and it can't converge on it. Hold it on purpose, in files the team owns.
 
 Someone used to draw the boxes. Implementation got cheap, but somebody still has to draw them, and now the diagram is the whole company.
