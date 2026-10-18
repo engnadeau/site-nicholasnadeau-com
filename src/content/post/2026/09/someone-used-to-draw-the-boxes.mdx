@@ -14,7 +14,7 @@ tags:
   - onix
 ---
 
-{/* DRAFT TODO before publishing: (1) Francis and Sylvain replace the two lorem ipsum quotes below, or cut them, and if they cut them, change "Written with" to "Thanks to"; (2) set the real publishDate and move the file to the matching YYYY/MM folder. */}
+{/* DRAFT TODO before publishing: (1) Sylvain replaces the lorem ipsum quote below, or cuts it; (2) set the real publishDate and move the file to the matching YYYY/MM folder. */}
 
 _Written with [Francis Lacoste](https://www.linkedin.com/in/francislacoste/) of The VPE Coach and [Sylvain Carle](https://www.linkedin.com/in/sylvaincarle/) of Metanoia. This post grew out of a talk I gave at the Terra Agentika lunch in Montréal in August, and the discussions that followed._
 
@@ -34,21 +34,17 @@ For a founder hacking alone, or two co-founders chasing feedback, that's great. 
 
 With no shared moment to agree on what we're building, engineering drifts away from go-to-market and marketing. That drift is an old problem. Engineers also stop talking to each other, and that one is new. They talk to their agents more than to the person at the next desk. Pair programming fades. The guild model that Spotify made popular, where every Python or React developer across the org trades tips, fades with it. We spend more time with skills downloaded from the internet than with our own peers. And you end up with one developer running every new tool all night long, shipping more than anyone else, while the rest of the team falls behind. A rising tide should lift all boats, not just the one 10x developer with all the cool tools.
 
-On performance reviews, most of the table agreed that the framework hasn't changed: output is business value, and seniority is measured by your impact on the team and the company. The expectations changed. Everyone is expected to work full stack now, to hold more in their head at once, and to have product taste. Someone at the table described developers who spin the wheel. They get a bad result, send the agent for another try, and another, burning tokens without the judgment to know when and where to step in. Nobody at the table had a metric for it yet. The best guess was to look at tokens and iterations against outcomes. The brilliant jerk who force-pushes alone hasn't gone away either. I catch that one in 360 reviews, and I now include people outside engineering in them.
-
-{/* TODO Francis: replace the lorem ipsum with your quote on performance and hiring. Edit the lead-in if you want. */}
-
 Francis Lacoste coaches engineering leaders at The VPE Coach.
 
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-The team stops converging. That's not only an engineering problem, and the fix isn't only an engineering fix.
+> When I look at a team leaning hard on agents, the risk I flag is rarely the code. It is that the people have stopped needing each other. Alignment, mentorship, a shared sense of what good looks like: none of those were ever on a roadmap, they were what happened while engineers worked side by side. Take the side by side away and you lose more than some chatter. You lose how the team converges, and how the next senior gets made. That is a leadership problem, and it does not have a purely technical fix.
 
 ## Context engineering is a company discipline
 
 Context engineering showed up as a developer trick: put the right files, docs, and examples into the model's window and it does better work. The same idea works for the whole company.
 
 Most of us know the [C4 model](https://c4model.com/) for software architecture. Its four core levels stop at the system, and even its landscape view maps software, not the company. I've started thinking about a level further out, a C0, where the company itself is the diagram. Go-to-market is a container. Marketing, sales, support, and even your users and customers are things you can query.
+
+With shared company context, a few things become routine:
 
 - The user stories that come out of customer interviews land in the engineering tracker as real stories, not as a summary of a summary three meetings later.
 - Marketing can see what's coming down the pipeline, and what slipped, and plan the content calendar around it.
@@ -82,15 +78,11 @@ Once the context is shared, information that used to travel through meetings can
 
 Shared context also helps a team converge on how it works. When every developer brings their own agent skills, the skills drift apart, and so do the plans and pull requests they produce. Pulling them into one shared set, agreed on as a team and installed on day one, brings back some of what the boxes gave us: a shared format for a plan, a shared bar for a pull request. A new hire gets the same context as everyone else within minutes. They don't get the same judgment on day one, and that still takes the team.
 
-Those shared files have a git history, and someone at the lunch suggested reading it. If your QA skill gets edited five times a week, your QA process has a problem. If a file nobody has touched in a year is still loaded into every session, that's a problem too. A wiki that humans and agents both read and write came up as a good interface, for example Karpathy's LLM wiki pattern: plain markdown in git, with Obsidian as the reader.
+Those shared files have a git history, and it's worth reading. If your QA skill gets edited five times a week, your QA process has a problem. If a file nobody has touched in a year is still loaded into every session, that's a problem too. A wiki that humans and agents both read and write is a good interface for them, for example Karpathy's LLM wiki pattern: plain markdown in git, with Obsidian as the reader.
 
 Early in my career, code review meant arguing about curly braces, and we never got to whether the feature should exist. Linters and formatters ended the curly brace arguments. Shared skills and reviewer agents, built by the team from its own work, can do the same thing one level up. They clear the ground so the conversation with your teammate can be about intent. And with the volume of code these tools generate, you need that. We're producing more code than people can read.
 
-One person at the lunch has stopped doing human code review. On a greenfield team of two, they run cross-model reviews until only nitpicks are left. Another argued that the thing to review now is the plan. In their experience, the bugs that survive are rarely bad code. The code does exactly what the plan said, and the plan was ambiguous: a forgotten rule, an unhandled edge case, a misread intent. So they review the plan relentlessly, with several models, until they know what the code will look like before it's generated. Three days of planning, fifteen minutes of code, and hopefully no more code review at the end.
-
-Someone pushed back: you often don't know what you want until you have a working version, and by then you have ten thousand lines. I lean on Basecamp's [Shape Up](https://basecamp.com/shapeup): make bets, spike the risky part, and put the investment at both ends. On one end, the spec. On the other, test environments where anyone can check the real behaviour before it ships. The middle, writing the lines of code, is becoming the commodity.
-
-Napkins are still cheaper than code, as someone else at the table said, and it's a trap to jump into prototyping just because implementation got cheap.
+The review that matters most has moved upstream. The bugs that survive now are rarely bad code. The code does exactly what the plan said, and the plan was ambiguous: a forgotten rule, an unhandled edge case, a misread intent. So review the plan hardest, before the code exists.
 
 Getting a box back, getting it wrong, and getting told why is how I learned, and how juniors built judgment. If an agent catches it first, I don't know yet where the next senior engineer comes from.
 
