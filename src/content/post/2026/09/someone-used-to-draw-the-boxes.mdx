@@ -2,7 +2,7 @@
 publishDate: 2026-09-29
 author: Nicholas Nadeau
 title: 'Someone Used to Draw the Boxes'
-excerpt: 'Implementation got cheap, and the rituals that kept a team on the same page went with it. Context engineering, run at the company level, is how you get the agreement back.'
+excerpt: 'Implementation got cheap, and the rituals that kept a team on the same page went with it. Agents can carry the information now. Getting the agreement back is still a human job, and that job just got bigger.'
 image: ~/assets/images/post/2026/2026-09_someone-used-to-draw-the-boxes.jpg
 category: Technology
 tags:
@@ -16,9 +16,7 @@ tags:
 
 {/* DRAFT TODO before publishing: (1) Sylvain replaces the lorem ipsum quote below, or cuts it; (2) set the real publishDate and move the file to the matching YYYY/MM folder. */}
 
-_Written with [Francis Lacoste](https://www.linkedin.com/in/francislacoste/) of The VPE Coach and [Sylvain Carle](https://www.linkedin.com/in/sylvaincarle/) of Metanoia. This post grew out of a talk I gave at the Terra Agentika lunch in Montréal in August, and the discussions that followed._
-
-When I started writing software nearly twenty years ago, in C++, a senior engineer would spend days drawing the whole system in UML before anyone wrote a line of code. Then they'd point at one rectangle and say: "Nick, this is your box." I'd go implement the box, come back in three or four days, get yelled at, and iterate.
+When I started writing software nearly twenty years ago, in C++, the senior engineers I worked under still drew the whole system in UML before anyone wrote a line of code. Then they'd point at one rectangle and say: "Nick, this is your box." I'd go implement the box, come back in three or four days, get yelled at, and iterate.
 
 I was the agent. Considerably slower than today's agents, and not as good.
 
@@ -30,29 +28,35 @@ Agile moved most teams off the big up-front diagram, for good reasons. Other rit
 
 Since Claude Code arrived in early 2025 and agentic programming took off, writing code has become the cheap part. The pull now is to skip the talking: prototype first, ship first, figure out the interfaces and the technical debt later. The spec shrinks to "this is what I want, make no mistakes."
 
-For a founder hacking alone, or two co-founders chasing feedback, that's great. I work that way at the start of every company. But past a certain size, losing the rituals has a cost.
+Building got cheap. Being wrong didn't. The cost moved upstream, into the plan, and sideways, into teams that no longer agree on what they're building.
 
-With no shared moment to agree on what we're building, engineering drifts away from go-to-market and marketing. That drift is an old problem. Engineers also stop talking to each other, and that one is new. They talk to their agents more than to the person at the next desk. Pair programming fades. The guild model that Spotify made popular, where every Python or React developer across the org trades tips, fades with it. We spend more time with skills downloaded from the internet than with our own peers. And you end up with one developer running every new tool all night long, shipping more than anyone else, while the rest of the team falls behind. A rising tide should lift all boats, not just the one 10x developer with all the cool tools.
+For a founder hacking alone, or two co-founders chasing feedback, that trade is great. I work that way at the start of every company. But past a certain size, losing the rituals has a cost.
+
+With no shared moment to agree on what we're building, engineering drifts away from go-to-market and marketing. That drift is an old problem. The second drift is getting worse fast: engineers stop talking to each other. Stack Overflow replaced asking a colleague about syntax. Agents replace asking about design.
+
+Pair programming and the guild model that Spotify made popular, where every Python or React developer across the org trades tips, were already fading. Agents speed that up. We spend more time with skills downloaded from the internet than with our own peers.
 
 Francis Lacoste coaches engineering leaders at The VPE Coach.
 
 > When I look at a team leaning hard on agents, the risk I flag is rarely the code. It is that the people have stopped needing each other. Alignment, mentorship, a shared sense of what good looks like: none of those were ever on a roadmap, they were what happened while engineers worked side by side. Take the side by side away and you lose more than some chatter. You lose how the team converges, and how the next senior gets made. That is a leadership problem, and it does not have a purely technical fix.
 
+Francis is right that there's no purely technical fix. Both drifts have the same shape. Every ritual we lost carried two things: the information, and the argument about what to do with it. Agents can carry the information. The argument is still ours. The technical part buys back the time, and the fix is what leaders do with it.
+
 ## Context engineering is a company discipline
 
-Context engineering showed up as a developer trick: put the right files, docs, and examples into the model's window and it does better work. The same idea works for the whole company.
+Context engineering showed up as a developer trick: put the right files, docs, and examples into the model's window and it does better work.
 
-Most of us know the [C4 model](https://c4model.com/) for software architecture. Its four core levels stop at the system, and even its landscape view maps software, not the company. I've started thinking about a level further out, a C0, where the company itself is the diagram. Go-to-market is a container. Marketing, sales, support, and even your users and customers are things you can query.
+Many engineers know the [C4 model](https://c4model.com/) for software architecture. Its four core levels stop at the system, and even its landscape view maps software, not the company. I've started thinking about a level further out, a C0, where the company itself is the diagram. Go-to-market is a container. What marketing, sales, support, and your users and customers said and did is something you can query.
 
 With shared company context, a few things become routine:
 
+- A weekly summary of what the team actually did exists by default, so when I write our SR&ED claim (Canada's R&D tax credit) at the end of the year, it's grounded in the record and not in my memory.
 - The user stories that come out of customer interviews land in the engineering tracker as real stories, not as a summary of a summary three meetings later.
 - Marketing can see what's coming down the pipeline, and what slipped, and plan the content calendar around it.
-- A weekly summary of what the team actually did exists by default, so when I write our SR&ED claim (Canada's R&D tax credit) at the end of the year, it's grounded in the record and not in my memory.
 
-We were never able to do this before, because writing that context down by hand goes stale in five minutes. It has to be just-in-time: fetch what's true now, when someone needs it. That became possible in the last couple of years, with MCP servers, APIs that agents can call, and models good enough to use them.
+This never worked by hand, because context written down by hand goes stale. It has to be just-in-time: fetch what's true now, when someone needs it. That's the difference from the old UML, which was drawn up front and rotted. A C0 diagram gets fetched at the moment someone asks. That became possible in the last couple of years, with MCP servers, APIs that agents can call, and models good enough to use them.
 
-We used to buy one suite that did everything, Salesforce or Odoo, and the case for it was real: one data model, one permission model, one source of truth. Now that same suite means paying a seat for everyone who needs context, and an agent can fetch that context across tools instead. Five connected tools can still disagree with each other, but when the query happens at the moment someone asks, it's cheaper to reconcile them than to force every team into one tool.
+We used to buy one suite that did everything, Salesforce or Odoo, and the case for it was real: one data model, one permission model, one source of truth. But a suite reconciles everything up front, for every team, whether anyone asks or not. An agent reconciles only what one question needs, at the moment it's asked. That's why five tools that disagree can still be cheaper than one that agrees. When two of them do disagree, a person still decides which one is true. And the real risk was never the CRM. It's whoever ends up holding your source of truth.
 
 ## Share the context, not the credentials
 
@@ -64,43 +68,51 @@ For us at [Onix](https://onix.life), the company context lives in a handful of t
 - **Sentry**: what went wrong
 - **GitHub**: how it's made
 
-Our go-to-market team lives in Attio. I don't want engineers learning to navigate a CRM, and I don't want to pay for more seats and more SaaS sprawl. The same goes the other way: I don't want marketing digging through GitHub. But they regularly need to know things like "is this really how our privacy architecture works?", and the true answer lives in the code.
+Our go-to-market team lives in Attio. I don't want engineers learning to navigate a CRM, and I don't want to pay a seat for every person who only needs an answer from it. The same goes the other way: I don't want marketing digging through GitHub. But they regularly need to know things like "is this really how our privacy architecture works?", and the true answer lives in the code.
 
 They don't need the access. They need the context. So the interface does the work: a question goes in, an answer grounded in the code comes out, and nobody creates a GitHub account for the sales team. Permissions still apply.
 
-Access isn't alignment, though. The old ritual worked because it forced people into a room to disagree out loud, and shared context takes a reason to be in the room away. Marketing checks the pipeline without asking. Sales gets an answer from the code without talking to an engineer. Do that everywhere and you've built a very efficient silo, where everyone is informed and nobody agrees.
+## Access isn't alignment
 
-Most of what we used to do in those rooms was moving information, not arguing about intent. Status updates, "is this shipped yet?", "what did the customer actually say?" Agents can keep that information fresh, cheaply. So automate the information transfer, and spend the human time you get back on deciding what to build and why.
+The old ritual worked because it forced people into a room to disagree out loud, and shared context removes one of the reasons to be in that room. Marketing checks the pipeline without asking. Sales gets an answer from the code without talking to an engineer. Do that everywhere and you've built a very efficient silo, where everyone is informed and nobody agrees.
+
+Much of what filled those rooms was moving information: status updates, "is this shipped yet?", "what did the customer actually say?" The arguing was the part that mattered, and it often started from the status update. "Is this shipped yet?" was the moment someone said "sort of, because the customer actually wanted something else." Automate the update and you lose that moment too, unless you replace it on purpose.
+
+Code review went through this once already. Early in my career, it meant arguing about curly braces, and we never got to whether the feature should exist. Linters and formatters ended the curly brace arguments, and that cleared the ground for intent. Agents can do the same for the information in the room. But clearing the ground isn't enough. After linters, plenty of reviews turned into a rubber-stamp "LGTM." Somebody still has to call the room, on purpose, and decide what it's for.
+
+The room I'd call first is plan review. The bugs that survive in our codebase are rarely bad code. The code does exactly what the plan said, and the plan was ambiguous: a forgotten rule, an unhandled edge case, a misread intent. That's where the cost of being wrong moved. So review the plan hardest, before the code exists.
 
 ## Linting at the company level
 
-Shared context also helps a team converge on how it works. When every developer brings their own agent skills, the skills drift apart, and so do the plans and pull requests they produce. Pulling them into one shared set, agreed on as a team and installed on day one, brings back some of what the boxes gave us: a shared format for a plan, a shared bar for a pull request. A new hire gets the same context as everyone else within minutes. They don't get the same judgment on day one, and that still takes the team.
+Shared context also helps a team converge on how it works. When every developer brings their own agent skills, the skills drift apart, and so do the plans and pull requests they produce. You end up with one developer running every new tool all night long, shipping more than anyone else, while the rest of the team falls behind. The tools should make the whole team better, not one developer.
 
-Those shared files have a git history, and it's worth reading. If your QA skill gets edited five times a week, your QA process has a problem. If a file nobody has touched in a year is still loaded into every session, that's a problem too. A wiki that humans and agents both read and write is a good interface for them, for example Karpathy's LLM wiki pattern: plain markdown in git, with Obsidian as the reader.
+Pulling the skills into one shared set, agreed on as a team and installed on day one, brings back some of what the boxes gave us: a shared format for a plan, a shared bar for a pull request. A new hire gets the same context as everyone else within minutes. They don't get the same judgment on day one, and that still takes the team.
 
-Early in my career, code review meant arguing about curly braces, and we never got to whether the feature should exist. Linters and formatters ended the curly brace arguments. Shared skills and reviewer agents, built by the team from its own work, can do the same thing one level up. They clear the ground so the conversation with your teammate can be about intent. And with the volume of code these tools generate, you need that. We're producing more code than people can read.
+Shared skills and reviewer agents, built by the team from its own work, do for the team's habits what linters did for braces. They enforce the agreement. They can't reach it. And with the volume of code these tools generate, enforcement matters. On our team, we're producing more code than people can read.
 
-The review that matters most has moved upstream. The bugs that survive now are rarely bad code. The code does exactly what the plan said, and the plan was ambiguous: a forgotten rule, an unhandled edge case, a misread intent. So review the plan hardest, before the code exists.
+Those shared files have a git history, and it's worth reading. If your QA skill gets edited five times a week, your QA process has a problem. If a file nobody has touched in a year is still loaded into every session, that's a problem too. The best home for these files is one that humans and agents both read and write. Karpathy's [LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) pattern is a good model: plain markdown in git, with Obsidian as the reader.
 
-That shift has a cost I haven't solved. Getting a box back, getting it wrong, and getting told why is how I learned, and how juniors built judgment. If an agent catches the mistake first, I don't know yet where the next senior engineer comes from.
+All of this has a cost I haven't solved. I was the agent, and that's how I learned: getting a box back, getting it wrong, and getting told why. It's how juniors built judgment. Francis put it as how the next senior gets made. If an agent catches the mistake first, I don't have an answer yet.
 
-{/* TODO Sylvain: replace the lorem ipsum with your quote on the investor and community angle. Edit the lead-in if you want. */}
+{/* TODO Sylvain: replace the lorem ipsum with two to four sentences on the junior question above. From where you sit across companies and the Montréal community: where does the next senior engineer come from when the agent gets the first box? Could communities like Terra Agentika become the guild that companies lost? Edit the lead-in if you want. */}
 
 Sylvain Carle works on the investor side at Metanoia.
 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-## What this means for engineering leaders
+## Your scope just got bigger
 
-If you lead an engineering team, your scope just got bigger.
-
-1. **Put the ritual back.** Planning is the step agents made optional, so make it deliberate. Review plans harder than you review code.
+1. **Put the ritual back.** Bring back the argument, without the big up-front diagram. Planning is the step agents made optional, so make it deliberate. Review plans harder than you review code.
 2. **Draw the C0 boxes.** Map where each kind of company context lives, who needs it, and how they get it without new accounts.
 3. **Own your agent skills as a team.** Shared skills and reviewer agents in one place, installed on day one, updated together.
-4. **Close the loops.** Every recurring meeting that exists only to move information between teams is a candidate for a scheduled job, with a human deciding what to do with the output. Keep the meetings where people argue about intent.
+4. **Close the loops.** Agents can carry the information, so every recurring meeting that exists only to move it between teams is a candidate for a scheduled job, with a human deciding what to do with the output. Keep the meetings where people argue about intent.
+
+Two parts of this don't have clean answers yet. Some roles were mostly that information transfer: status relays, some program management, some of the scrum master's week. Those roles have to move toward the arguing, or they shrink. And someone has to rebuild the loop that turns juniors into seniors, now that the agent gets the first box.
 
 ## The company is a context container
 
-The skills, the summaries, the reviewer agents: together they're the new diagram, the shared record of how the team agreed to think. If that only lives in one vendor's chat history, or disappears when a session closes, the team doesn't really have it, and it can't converge on it. Hold it on purpose, in files the team owns.
+The skills, the summaries, the reviewer agents: they're the record of what the team argued about and agreed to. If that record only lives in one vendor's chat history, or disappears when a session closes, the team doesn't really have it, and it can't converge on it. Hold it on purpose, in files the team owns.
 
-Someone used to draw the boxes. Implementation got cheap, but somebody still has to draw them, and now the diagram is the whole company.
+Someone used to draw the boxes. Implementation got cheap, but somebody still has to draw them. If you lead the team, that's you, and now the diagram is the whole company.
+
+_Written with [Francis Lacoste](https://www.linkedin.com/in/francislacoste/) of The VPE Coach and [Sylvain Carle](https://www.linkedin.com/in/sylvaincarle/) of Metanoia. This post grew out of a talk I gave at the Terra Agentika lunch in Montréal in August, and the discussions that followed._
