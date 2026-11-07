@@ -12,7 +12,7 @@ metadata:
   title:
     default: Nicholas Nadeau
     template: '%s — Nicholas Nadeau'
-  description: 'Co-founder and CTO of Onix, where experts train and own their own AI models. Previously CTO at 1X, SmartOne.ai, and AON3D. Ph.D. in robotics and AI.'
+  description: 'Co-founder and CTO of Onix. Ethical, decentralized AI and physical intelligence. Ex-CTO of 1X, SmartOne.ai, and AON3D. Ph.D. in robotics and AI.'
   robots:
     index: true
     follow: true
