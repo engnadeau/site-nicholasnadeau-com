@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+
+import robotImage from '~/assets/images/hero/nicholas-robot.jpg';
+import onixImage from '~/assets/images/hero/nicholas-david-onix.jpg';
+---
+
+<div class="relative mx-auto w-full max-w-[560px] aspect-square">
+  <Image
+    src={robotImage}
+    alt="Nicholas Nadeau next to a humanoid robot"
+    widths={[400, 768, 1024, 1400]}
+    sizes="(max-width: 1023px) 80vw, 40vw"
+    loading="eager"
+    fetchpriority="high"
+    class="absolute top-[4%] right-0 w-[76%] aspect-square rounded-[22%] object-cover object-[60%_50%]"
+  />
+
+  <div class="absolute bottom-0 left-0 w-[50%] aspect-square rounded-[22%] p-[3%] bg-page">
+    <Image
+      src={onixImage}
+      alt="Nicholas Nadeau and David Bennahum, co-founders of Onix"
+      widths={[300, 600, 900]}
+      sizes="(max-width: 1023px) 50vw, 25vw"
+      loading="eager"
+      class="w-full h-full rounded-[20%] object-cover"
+    />
+  </div>
+</div>

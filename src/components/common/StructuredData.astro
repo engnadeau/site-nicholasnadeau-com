@@ -1,0 +1,10 @@
+---
+// Emits Schema.org JSON-LD; pages pass it through the layout's `head` slot.
+export interface Props {
+  schema: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const { schema } = Astro.props;
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

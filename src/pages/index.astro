@@ -1,25 +1,52 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
+import HeroCollage from '~/components/widgets/HeroCollage.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-
-import heroImage from '~/assets/images/hero-nicholas.jpg';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { SITE, METADATA, I18N } from 'astrowind:config';
+import { personId } from '~/utils/person';
+import portrait from '~/assets/images/nicholas.jpg';
 
 const metadata = {
   title: 'Nicholas Nadeau',
 };
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE?.site}/#website`,
+    name: SITE?.name,
+    url: SITE?.site,
+    inLanguage: I18N?.language,
+    publisher: { '@id': personId },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': personId,
+    name: 'Nicholas Nadeau',
+    url: SITE?.site,
+    image: new URL(portrait.src, SITE?.site).toString(),
+    description: METADATA?.description,
+    jobTitle: 'Co-founder and CTO',
+    worksFor: { '@type': 'Organization', name: 'Onix', url: 'https://onix.life' },
+    knowsAbout: ['Artificial intelligence', 'Robotics', 'Human-robot interaction', 'Physical intelligence'],
+    sameAs: ['https://www.linkedin.com/in/engnadeau', 'https://github.com/engnadeau', 'https://x.com/EngNadeau'],
+  },
+];
 ---
 
 <Layout metadata={metadata}>
+  <StructuredData slot="head" schema={structuredData} />
   <!-- Hero -->
   <Hero2
     id="hero"
-    title="Hey, I'm Nicholas"
-    subtitle="Building Personal Intelligence: AI that amplifies human genius."
-    image={{
-      src: heroImage,
-      alt: 'Nicholas Nadeau',
-    }}
-  />
+    title="Hey, I'm Nick"
+    subtitle="Building ethical, decentralized AI. Humans, AI, and robots as one system. Co-founder and CTO, Onix. Ex-CTO, 1X."
+  >
+    <HeroCollage slot="image" />
+  </Hero2>
   <BlogLatestPosts id="posts" title="Latest Posts" />
 </Layout>
