@@ -1,9 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
+import HeroCollage from '~/components/widgets/HeroCollage.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-
-import heroImage from '~/assets/images/hero-nicholas.jpg';
 
 const metadata = {
   title: 'Nicholas Nadeau',
@@ -16,10 +15,8 @@ const metadata = {
     id="hero"
     title="Hey, I'm Nicholas"
     subtitle="Building ethical, decentralized AI. Humans, AI, and robots as one system. Co-founder and CTO, Onix. Ex-CTO, 1X."
-    image={{
-      src: heroImage,
-      alt: 'Nicholas Nadeau',
-    }}
-  />
+  >
+    <HeroCollage slot="image" />
+  </Hero2>
   <BlogLatestPosts id="posts" title="Latest Posts" />
 </Layout>

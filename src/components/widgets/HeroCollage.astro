@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+
+import robotImage from '~/assets/images/hero/nicholas-robot.jpg';
+import onixImage from '~/assets/images/hero/nicholas-david-onix.jpg';
+import salonImage from '~/assets/images/hero/ai-salon-montreal.jpg';
+
+const small = [
+  { src: onixImage, alt: 'Nicholas Nadeau and David Bennahum, co-founders of Onix' },
+  { src: salonImage, alt: 'David Bennahum, Nicholas Nadeau, and Nick Grouf at AI Salon Montréal' },
+];
+---
+
+<div class="grid grid-cols-2 gap-3">
+  <Image
+    src={robotImage}
+    alt="Nicholas Nadeau next to a humanoid robot"
+    widths={[400, 768, 1024, 1600]}
+    sizes="(max-width: 1023px) 100vw, 50vw"
+    loading="eager"
+    fetchpriority="high"
+    class="col-span-2 w-full aspect-[3/2] object-cover rounded-md"
+  />
+  {
+    small.map((img) => (
+      <Image
+        src={img.src}
+        alt={img.alt}
+        widths={[300, 600, 800]}
+        sizes="(max-width: 639px) 50vw, (max-width: 1023px) 50vw, 25vw"
+        loading="eager"
+        class="hidden sm:block w-full aspect-[3/2] object-cover rounded-md"
+      />
+    ))
+  }
+</div>
