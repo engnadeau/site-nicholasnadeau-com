@@ -3,30 +3,10 @@ import { Image } from 'astro:assets';
 
 import robotImage from '~/assets/images/hero/nicholas-robot.jpg';
 import onixImage from '~/assets/images/hero/nicholas-david-onix.jpg';
-
-// Superellipse |x|^4 + |y|^4 = 1, scaled to the 0..1 box that objectBoundingBox clip paths use.
-const steps = 160;
-const squircle =
-  Array.from({ length: steps }, (_, i) => {
-    const t = (i / steps) * 2 * Math.PI;
-    const c = Math.cos(t);
-    const s = Math.sin(t);
-    const x = Math.sign(c) * Math.sqrt(Math.abs(c));
-    const y = Math.sign(s) * Math.sqrt(Math.abs(s));
-    return `${i ? 'L' : 'M'}${((x + 1) / 2).toFixed(4)} ${((y + 1) / 2).toFixed(4)}`;
-  }).join(' ') + ' Z';
 ---
 
-<svg width="0" height="0" class="absolute" aria-hidden="true">
-  <defs>
-    <clipPath id="hero-squircle" clipPathUnits="objectBoundingBox">
-      <path d={squircle}></path>
-    </clipPath>
-  </defs>
-</svg>
-
 <div class="relative mx-auto w-full max-w-[560px] aspect-square">
-  <div class="squircle absolute right-0 bottom-[6%] w-[64%] aspect-square bg-primary opacity-10 rotate-6"></div>
+  <div class="absolute right-0 bottom-[6%] w-[64%] aspect-square rounded-[22%] bg-primary opacity-10 rotate-6"></div>
 
   <Image
     src={robotImage}
@@ -35,26 +15,17 @@ const squircle =
     sizes="(max-width: 1023px) 80vw, 40vw"
     loading="eager"
     fetchpriority="high"
-    class="squircle absolute top-0 right-[4%] w-[76%] aspect-square object-cover object-[60%_50%]"
+    class="absolute top-0 right-[4%] w-[76%] aspect-square rounded-[22%] object-cover object-[60%_50%]"
   />
 
-  <div class="squircle absolute bottom-0 left-0 w-[50%] aspect-square p-[3%] -rotate-3 ring-bg">
+  <div class="absolute bottom-0 left-0 w-[50%] aspect-square rounded-[22%] p-[3%] -rotate-3 bg-page">
     <Image
       src={onixImage}
       alt="Nicholas Nadeau and David Bennahum, co-founders of Onix"
       widths={[300, 600, 900]}
       sizes="(max-width: 1023px) 50vw, 25vw"
       loading="eager"
-      class="squircle w-full h-full object-cover"
+      class="w-full h-full rounded-[20%] object-cover"
     />
   </div>
 </div>
-
-<style>
-  .squircle {
-    clip-path: url(#hero-squircle);
-  }
-  .ring-bg {
-    background: var(--aw-color-bg-page);
-  }
-</style>
