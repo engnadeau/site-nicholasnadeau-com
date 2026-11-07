@@ -33,3 +33,9 @@
   to = "https://nicholasnadeau.com/:splat"
   status = 301
   force = true
+
+# Consulting page retired, send old links home
+[[redirects]]
+  from = "/landing/consulting"
+  to = "/"
+  status = 301
